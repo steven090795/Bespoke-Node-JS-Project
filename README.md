@@ -1,4 +1,7 @@
 Orange Team
+-Steven
+-Robert
+-Alvin Putra
 =======================
 ##Scrum Master 1: Steven
 
