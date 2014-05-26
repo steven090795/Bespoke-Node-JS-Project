@@ -24,9 +24,9 @@ module.exports = function(grunt) {
       src: {
         files: [{
           expand: true,
-          cwd:'src/styles/',
+          cwd:'src/',
           src: '**/*.styl',
-          dest: 'public/styles/',
+          dest: 'public/',
           ext: '.css'
         }],
         options: {
@@ -38,9 +38,9 @@ module.exports = function(grunt) {
       src: {
         files: [{
           expand: true,
-          cwd: 'src/scripts/',
+          cwd: 'src/',
           src: '**/*.coffee',
-          dest: 'public/scripts/',
+          dest: 'public/',
           ext: '.js'
         }]
       }
