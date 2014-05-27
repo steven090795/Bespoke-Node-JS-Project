@@ -1,0 +1,45 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Offline Bespoke
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+    <div class="header">
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="index.html">First</option></a>
+    <option value="index2.html">Second</option></a>
+    <option value="index3.html" selected="1">Third</option></a>
+    </select>
+    </div>
+    article
+
+      section
+        h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
+
+      section
+        h2.bullet Tools Used
+        ul
+          li bfi.exe (Build Floppy Image - to create bootable image from files)
+          li mkisofs.exe (a tool to create/build the CDRom ISO image file)
+          li build-iso.cmd (batch file to create floppy and iso image)
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
