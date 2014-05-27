@@ -27,7 +27,7 @@ html
         h2 Pengamanan pada Sistem Operasi
         h3 Operating System atau OS adalah perangkat lunak sistem yang bertugas untuk melakukan kontrol dan manajemen perangkat keras serta operasi-operasi dasar sistem, termasuk menjalankan software aplikasi seperti program-program pengolah kata dan browser web.
       section
-        h3 Sistem Operasi secara umum terdiri dari beberapa bagian:
+        h3.bullet Sistem Operasi secara umum terdiri dari beberapa bagian:
           ol
            li Mekanisme Boot, yaitu meletakkan kernel ke dalam memory
            li Kernel, yaitu inti dari sebuah Sistem Operasi. 
@@ -39,23 +39,141 @@ html
       section(data-bespoke-hash='Microsoft')
         h3 Keluarga Microsoft Windows - yang antara lain terdiri dari Windows Desktop Environment (versi 1.x hingga versi 3.x), Windows 9x (Windows 95, 98, dan Windows ME), dan Windows NT (Windows NT 3.x, Windows NT 4.0, Windows 2000, Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 (Seven) dan Windows 8, Windows CE (Windows Embedded Compact), Windows Embedded Systems.
       section
-        h3 Keluarga Unix yang menggunakan antarmuka sistem operasi POSIX, seperti SCO UNIX, keluarga BSD (Berkeley Software Distribution), GNU/Linux, MacOS/X (berbasis kernel BSD yang dimodifikasi, dan dikenal dengan nama Darwin) dan GNU/Hurd.
-        h3 GNU : Unix like operating system.
-        h3 Linux Distribution :
-        h3 - Debian, Knoppix, Ubuntu, Gentoo, Pacman, SuSe, Fedora, Red Hat Enterprise, Mandriva, Slackware dll
+        h3.bullet Keluarga Unix yang menggunakan antarmuka sistem operasi POSIX, seperti SCO UNIX, keluarga BSD (Berkeley Software Distribution), GNU/Linux, MacOS/X (berbasis kernel BSD yang dimodifikasi, dan dikenal dengan nama Darwin) dan GNU/Hurd.
+        h3.bullet GNU : Unix like operating system.
+        h3.bullet Linux Distribution :
+        h3.bullet - Debian, Knoppix, Ubuntu, Gentoo, Pacman, SuSe, Fedora, Red Hat Enterprise, Mandriva, Slackware dll
       section
-        h3 Mac OS, adalah sistem operasi untuk komputer keluaran Apple yang biasa disebut Mac atau Macintosh. Versions of Mac OS X:
-          ul
-            li Mac OS 10 (Cheetah)
-            li Mac OS 10.1 (Puma)
-            li Mac OS 10.2 (Jaguar)
-            li Mac OS 10.3 (Panther)
-            li Mac OS 10.4 (Tiger)
-            li Mac OS 10.5 (Leopard)
-            li Mac OS 10.6 (Snow Leopard)
-            li Mac OS 10.7 (Lion) 
-            li Mac OS 10.8 (Mountain Lion)
-            li Mac OS 10.9 (Mavericks)
+        h3.bullet Mac OS, adalah sistem operasi untuk komputer keluaran Apple yang biasa disebut Mac atau Macintosh. Versions of Mac OS X:
+        ul
+          li Mac OS 10 (Cheetah)
+          li Mac OS 10.1 (Puma)
+          li Mac OS 10.2 (Jaguar)
+          li Mac OS 10.3 (Panther)
+          li Mac OS 10.4 (Tiger)
+          li Mac OS 10.5 (Leopard)
+          li Mac OS 10.6 (Snow Leopard)
+          li Mac OS 10.7 (Lion) 
+          li Mac OS 10.8 (Mountain Lion)
+          li Mac OS 10.9 (Mavericks)
+      section
+        h3.bullet  Sedangkan komputer Mainframe, dan Super komputer menggunakan banyak sekali sistem operasi yang berbeda-beda, umumnya merupakan turunan dari sistem operasi UNIX yang dikembangkan oleh vendor seperti IBM AIX, HP/UX, dll.
+        h3.bullet Operating systems can be classified as follows:
+        ol
+          li multi-user : Allows two or more users to run programs at the same time. Some operating systems permit hundreds or even thousands of concurrent users.
+          li multiprocessing : Supports running a program on more than one CPU.
+          li multitasking : Allows more than one program to run concurrently.
+          li multithreading : Allows different parts of a single program to run concurrently.
+          li real time: Responds to input instantly. General-purpose operating systems, such as DOS and UNIX, are not real-time.
+      section
+        h2 Pengamanan pada sistem operasi Linux
+      section
+        h3.bullet Komponen Arsitektur Keamanan Linux :
+      section
+        h2.bullet Account Pemakai (user account)
+        h3.bullet Keuntungan : 
+        ul
+          li Kekuasaan dalam satu account yaitu root, sehingga mudah dalam administrasi system.
+          li Kecerobohan salah satu user tidak berpengaruh kepada system secara keseluruhan.
+          li Masing-masing user memiliki privacy yang ketat
+      section
+        h3.bullet Macam User :
+        p.bullet Root    :   kontrol system file, user, sumber daya (devices) dan akses jaringan
+        p.bullet User    :   account dengan kekuasaan yang diatur oleh root dalam melakukan aktifitas dalam system.
+        p.bullet Group :   kumpulan user yang memiliki hak sharing yang sejenis terhadap suatu devices tertentu.
+      section
+        h2.bullet Kontrol Akses secara Diskresi (Discretionary Access control)
+        h3.bullet Discretionary Access control (DAC) adalah metode pembatasan yang ketat, yang meliputi : 
+        ul
+          li Setiap account memiliki username dan password sendiri.
+          li Setiap file/device memiliki atribut(read/write/execution) kepemilikan, group, dan user umum.
+      section
+        h3.bullet Jika kita lakukan list secara detail menggunakan: 
+        h3.bullet $ls –l
+        h3.bullet kita dapat melihat penerapan DAC pada file system linux :
+        <pre class="bullet"> d rw-  --x  ---  5  fade  users 1024  Feb   8 12:30 desktop</pre>
+        <pre class="bullet">- rw-  r--  r--  9  joni  mkt    318  Mar  30 09:05 letter</pre>
+      section
+        table(width="500" border="1").bullet
+          tr
+            td -
+            td rw-
+            td r--
+            td r--
+            td 9
+            td joni
+            td mkt
+            td 318
+            td Mar
+            td 30
+            td 09:05
+            td letter
+          tr
+            td
+              strong 1
+            td 
+              strong 2
+            td 
+              strong 3
+            td 
+              strong 4
+            td
+              strong 5
+            td
+              strong 6
+            td
+              strong 7
+            td
+              strong 8
+            td
+              strong 9
+            td
+              strong 9
+            td
+              strong 10
+            td
+              strong 11
+        h3 Keterangan :
+        table(width="600" style="text-align:left")
+          tr
+            td(width="300")
+              p 1 = tipe dari file ; tanda dash ( - ) berarti file biasa, ( d ) berarti directory, ( l ) berarti file link, dsb
+              p 2 = Izin akses untuk owner (pemilik), r=read/baca, w=write/tulis, x=execute/eksekusi 
+              p 3 = Izin akses untuk group
+              p 4 = Izin akses untuk other (user lain yang berada di luar group yang didefinisikan sebelumnya)
+            td
+              p 5 = Nama pemilik (owner)
+              p 6 = Nama Group
+              p 7 = Jumlah link file
+              p 8 = Besar file dalam byte
+              p 9 = Bulan dan tanggal update terakhir
+              p 10 = Waktu update terakhir
+              p 11 = Nama file/device
+      section
+        h2.bullet Perintah-perintah penting pada DAC :
+      section
+        h3 Mengubah izin akses file :
+        p(align="left") 1. chmod < u | g | o > < + | - > < r | w | x > nama file
+        p Contoh : 
+        h3 chmod u+x g+w o-r letter 
+        p(align="left") tambahkan akses eksekusi(x) untuk user (u), tambahkan juga akses write(w) untuk group (g) dan kurangi izin akses read(r) untuk other(o) user.
+      section
+        p(align="left") 2. chmod metode octal, chmod - - - namafile , digit dash ( - ) pertama untuk izin akses user, digit ke-2 untuk izin akses group dan digit ke-3 untuk izin akses other, berlaku ketentuan : r(read) = 4, w(write) = 2, x (execute) = 1 dan tanpa izin akses = 0.
+        p Contoh :
+        h3 Chmod 740 borg.dead.letter
+        p(align="left") Berarti : bagi file borg.dead.letter berlaku
+        p(align="left") digit ke-1 -> 7=4+2+1=izin akses r,w,x penuh untuk user.
+        p(align="left") digit ke-2 -> 4=4+0+0=izin akses r untuk group
+        p(align="left") digit ke-3 -> 0=0+0+0=tanpa izin akses untuk other user.
+      section
+        h3 Mengubah kepemilikan : chown (owner/pemilik) (nama file)
+        h3 Mengubah kepemilikan group : chgrp (group owner) (nama file)
+        h3 Menggunakan account root untuk sementara :
+        pre
+          ~$ su            ; system akan meminta password
+          password password : **** ; prompt akan berubah jadi pagar,         
+                  tanda login sebagai root
+          ~# _                                                     
       section
         h1 Pengamanan pada Sistem Operasi LINUX
       section
