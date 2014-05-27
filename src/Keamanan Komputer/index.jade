@@ -149,7 +149,30 @@ html
               p 10 = Waktu update terakhir
               p 11 = Nama file/device
       section
-        
+        h2.bullet Perintah-perintah penting pada DAC :
+      section
+        h3 Mengubah izin akses file :
+        p(align="left") 1. chmod < u | g | o > < + | - > < r | w | x > nama file
+        p Contoh : 
+        h3 chmod u+x g+w o-r letter 
+        p(align="left") tambahkan akses eksekusi(x) untuk user (u), tambahkan juga akses write(w) untuk group (g) dan kurangi izin akses read(r) untuk other(o) user.
+      section
+        p(align="left") 2. chmod metode octal, chmod - - - namafile , digit dash ( - ) pertama untuk izin akses user, digit ke-2 untuk izin akses group dan digit ke-3 untuk izin akses other, berlaku ketentuan : r(read) = 4, w(write) = 2, x (execute) = 1 dan tanpa izin akses = 0.
+        p Contoh :
+        h3 Chmod 740 borg.dead.letter
+        p(align="left") Berarti : bagi file borg.dead.letter berlaku
+        p(align="left") digit ke-1 -> 7=4+2+1=izin akses r,w,x penuh untuk user.
+        p(align="left") digit ke-2 -> 4=4+0+0=izin akses r untuk group
+        p(align="left") digit ke-3 -> 0=0+0+0=tanpa izin akses untuk other user.
+      section
+        h3 Mengubah kepemilikan : chown (owner/pemilik) (nama file)
+        h3 Mengubah kepemilikan group : chgrp (group owner) (nama file)
+        h3 Menggunakan account root untuk sementara :
+        pre
+          ~$ su            ; system akan meminta password
+          password password : **** ; prompt akan berubah jadi pagar,         
+                  tanda login sebagai root
+          ~# _                                                     
       section
         h2 Keyboard Interaction
         h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
