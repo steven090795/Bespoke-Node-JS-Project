@@ -87,9 +87,67 @@ html
           li Setiap account memiliki username dan password sendiri.
           li Setiap file/device memiliki atribut(read/write/execution) kepemilikan, group, dan user umum.
       section
-        h3.bullet Jika kita lakukan list secara detail menggunakan $ls –l, kita dapat melihat penerapan DAC pada file system linux :
-        <pre>d rw-  --x  ---  5  fade  users 1024  Feb   8 12:30 desktop</pre>
-        <pre>- rw-  r--  r--  9  joni  mkt    318  Mar  30 09:05 letter</pre>
+        h3.bullet Jika kita lakukan list secara detail menggunakan: 
+        h3.bullet $ls –l
+        h3.bullet kita dapat melihat penerapan DAC pada file system linux :
+        <pre class="bullet"> d rw-  --x  ---  5  fade  users 1024  Feb   8 12:30 desktop</pre>
+        <pre class="bullet">- rw-  r--  r--  9  joni  mkt    318  Mar  30 09:05 letter</pre>
+      section
+        table(width="500" border="1").bullet
+          tr
+            td -
+            td rw-
+            td r--
+            td r--
+            td 9
+            td joni
+            td mkt
+            td 318
+            td Mar
+            td 30
+            td 09:05
+            td letter
+          tr
+            td
+              strong 1
+            td 
+              strong 2
+            td 
+              strong 3
+            td 
+              strong 4
+            td
+              strong 5
+            td
+              strong 6
+            td
+              strong 7
+            td
+              strong 8
+            td
+              strong 9
+            td
+              strong 9
+            td
+              strong 10
+            td
+              strong 11
+        h3 Keterangan :
+        table(width="600" style="text-align:left")
+          tr
+            td(width="300")
+              p 1 = tipe dari file ; tanda dash ( - ) berarti file biasa, ( d ) berarti directory, ( l ) berarti file link, dsb
+              p 2 = Izin akses untuk owner (pemilik), r=read/baca, w=write/tulis, x=execute/eksekusi 
+              p 3 = Izin akses untuk group
+              p 4 = Izin akses untuk other (user lain yang berada di luar group yang didefinisikan sebelumnya)
+            td
+              p 5 = Nama pemilik (owner)
+              p 6 = Nama Group
+              p 7 = Jumlah link file
+              p 8 = Besar file dalam byte
+              p 9 = Bulan dan tanggal update terakhir
+              p 10 = Waktu update terakhir
+              p 11 = Nama file/device
       section
         h2 Keyboard Interaction
         h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
