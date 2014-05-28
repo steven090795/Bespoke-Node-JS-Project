@@ -31,43 +31,47 @@ Scrum master 1
 Sprint 2:
 
 
-Sprint 30: 
+Sprint 3: 
 
 
 Progress Harian (Diupdate tiap hari)
 ------------------------------------
+Note:
+1 = Apa yg di kerjakan kemarin
+2 = Apa yg akan di kerjakan hari ini
+3 = Kendala dalam pengerjaan
 
 26/5 
 Daily Scrum
 Steven:
-1. Build Repository
+1. Build Repository(beberapa hari yg lalu)
 2. Cari Bahan & edit script for compile file jade & css in other src folder
 3. -
 
 Alvin:
-1. Clone Repository
+1. Clone Repository(kemarin)
 2. Cari Bahan & Reclone(Clone on drive C: work)
 3. Error head on clone
 
 Robert:
-1. Clone Repository
+1. Clone Repository(kemarin)
 2. Cari Bahan & ReClone(clone Error)
 3. ASK: Judul bisa di terima?
 
 27/5
 Daily Scrum
 Steven:
-1. CSS problem fixed
+1. CSS problem fixed, add resources Keamanan Komputer(kemarin)
 2. Coding Jade Keamanan Komputer 
 3. Stuck on table tag an pre tag
 
 Alvin:
-1. Menambahkan resources persentasi HBCD
+1. Menambahkan resources persentasi HBCD(kemarin)
 2. Belajar jade buat persentasi HBCD
 3. Syntax jade susah (belajar jade)
 
 Robert:
-1. Clone Berhasil, Start Coding Jade Keamanan Komputer
+1. Clone Berhasil,add resources branching pada git, Start Coding Jade Keamanan Komputer(kemarin)
 2. Start Coding Jade Branching Pada Git & menyusun folder & fix somebugs
 3. -
 
@@ -75,7 +79,7 @@ Robert:
 Daily Scrum
 
 Steven:
-1. CSS problem fixed
+1. CSS problem fixed(kemarin)
 2. Coding Jade Keamanan Komputer 
 3. Stuck on table tag an pre tag
 
