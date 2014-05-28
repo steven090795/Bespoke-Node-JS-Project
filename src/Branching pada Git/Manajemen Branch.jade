@@ -1,8 +1,9 @@
+doctype html
 html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Hiren's Bootable CD
+    title Manajemen Branch
 
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
@@ -13,22 +14,29 @@ html
   body
     <div class="header">
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
-    <option value="index.html">First</option></a>
-    <option value="index2.html">Second</option></a>
-    <option value="index3.html" selected="1">Third</option></a>
+    <option value="index.html">Branching Pada Git</option></a>
+    <option value="" selected="1">Manajemen Branch</option></a>
     </select>
     </div>
     article
 
       section
-        h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
-
+        h1 Manajemen Branch
       section
-        h2.bullet Tools Used
-        ul
-          li bfi.exe (Build Floppy Image - to create bootable image from files)
-          li mkisofs.exe (a tool to create/build the CDRom ISO image file)
-          li build-iso.cmd (batch file to create floppy and iso image)
+        h3 Perintah git branch melakukan tidak lebih dari sekedar membuat dan menghapus branch. Jika anda menjalankannya tanpa argument, anda mendapatkan daftar sederhana dari branch anda saat ini:
+        pre
+          $ git branch
+          <span> iss53</span>
+          * master
+          <span>   testing</span>
+      section
+        h3(align="left") Perhatikan karakter * yang menjadi prefiks pada branch master: ini menunjukkan bahwa branch yang telah anda check-out saat ini. Ini berarti bahwa jika anda melakukan commit pada titik ini, branch master akan bergerak maju dengan pekerjaan baru anda.
+        p(text-align="left") <br>
+          pre(text-align="left") $ git branch -v
+          pre iss53   93b412c fix javascript issue
+          pre * master  7a98805 Merge branch 'iss53'
+          pre testing 782fd34 add scott to the author list in the readmes
+
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
