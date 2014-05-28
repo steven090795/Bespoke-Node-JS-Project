@@ -79,13 +79,13 @@ Robert:
 Daily Scrum
 
 Steven:
-1. CSS problem fixed(kemarin)
-2. Coding Jade Keamanan Komputer 
-3. Stuck on table tag an pre tag
+1. Melanjutkan coding Jade Keamanan Komputer(kemarin)
+2. Memecah menjadi beberapa persentasi
+3. 
 
 Alvin
-1.
-2.
+1. 
+2. 
 3.
 
 Robert
