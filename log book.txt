@@ -2,7 +2,7 @@
 INFORMASI UMUM
 
 Nama kelompok: Orange Team
-Judul Topik: Keamanan Komputer, Branching Pada Git
+Judul Topik: Keamanan Komputer, Branching Pada Git, HBCD
 Alamat Github: https://github.com/steven090795/Bespoke-Node-JS-Project
 Clone Github: https://github.com/steven090795/Bespoke-Node-JS-Project.git
 Alamat Trello: https://trello.com/b/LeP3n51j
@@ -80,15 +80,15 @@ Daily Scrum
 
 Steven:
 1. Melanjutkan coding Jade Keamanan Komputer(kemarin)
-2. Memecah menjadi beberapa persentasi
-3. 
+2. Memecah menjadi beberapa persentasi+ coding persentasi Keamanan Computer dan Banching Pada Git
+3. tag pre is a problem align to left failed
 
 Alvin
-1. 
-2. 
-3.
+1. Membuat jade HBCD(kemarin)
+2. Menambahkan coding pada Pengamanan Pada Windows
+3. 
 
 Robert
-1.
-2.
-3.
+1. Membuat Jade Branching Pada Git(kemarin)
+2. Menambahkan coding pada Pengaman pada Linux + Membuat file jade Pengamanan Pada File
+3. Kurang mengerti dengan Branching Pada Git sehingga susah untuk meringkas
