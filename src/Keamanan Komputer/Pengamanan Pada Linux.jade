@@ -1,0 +1,157 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Pengamanan Pada Linux
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+    <div class="header">
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="index.html" >Keamanan Jaringan</option></a>
+    <option value="" selected="1">Pengamanan Pada Linux</option></a>
+    </select>
+    </div>
+    article
+     section
+        h1 Pengamanan pada Sistem Operasi LINUX
+      section
+        h3.bullet Komponen Arsitektur Keamanan Linux :
+      section
+        h2.bullet Account Pemakai (user account)
+        h3.bullet Keuntungan : 
+        ul
+          li Kekuasaan dalam satu account yaitu root, sehingga mudah dalam administrasi system.
+          li Kecerobohan salah satu user tidak berpengaruh kepada system secara keseluruhan.
+          li Masing-masing user memiliki privacy yang ketat
+      section
+        h3.bullet Macam User :
+        p.bullet Root    :   kontrol system file, user, sumber daya (devices) dan akses jaringan
+        p.bullet User    :   account dengan kekuasaan yang diatur oleh root dalam melakukan aktifitas dalam system.
+        p.bullet Group :   kumpulan user yang memiliki hak sharing yang sejenis terhadap suatu devices tertentu.
+      section
+        h2.bullet Kontrol Akses secara Diskresi (Discretionary Access control)
+        h3.bullet Discretionary Access control (DAC) adalah metode pembatasan yang ketat, yang meliputi : 
+        ul
+          li Setiap account memiliki username dan password sendiri.
+          li Setiap file/device memiliki atribut(read/write/execution) kepemilikan, group, dan user umum.
+      section
+        h3.bullet Jika kita lakukan list secara detail menggunakan: 
+        h3.bullet $ls –l
+        h3.bullet kita dapat melihat penerapan DAC pada file system linux :
+        <pre class="bullet"> d rw-  --x  ---  5  fade  users 1024  Feb   8 12:30 desktop</pre>
+        <pre class="bullet">- rw-  r--  r--  9  joni  mkt    318  Mar  30 09:05 letter</pre>
+      section
+        table(width="500" border="1").bullet
+          tr
+            td -
+            td rw-
+            td r--
+            td r--
+            td 9
+            td joni
+            td mkt
+            td 318
+            td Mar
+            td 30
+            td 09:05
+            td letter
+          tr
+            td
+              strong 1
+            td 
+              strong 2
+            td 
+              strong 3
+            td 
+              strong 4
+            td
+              strong 5
+            td
+              strong 6
+            td
+              strong 7
+            td
+              strong 8
+            td
+              strong 9
+            td
+              strong 9
+            td
+              strong 10
+            td
+              strong 11
+        h3 Keterangan :
+        table(width="600" style="text-align:left")
+          tr
+            td(width="300")
+              p 1 = tipe dari file ; tanda dash ( - ) berarti file biasa, ( d ) berarti directory, ( l ) berarti file link, dsb
+              p 2 = Izin akses untuk owner (pemilik), r=read/baca, w=write/tulis, x=execute/eksekusi 
+              p 3 = Izin akses untuk group
+              p 4 = Izin akses untuk other (user lain yang berada di luar group yang didefinisikan sebelumnya)
+            td
+              p 5 = Nama pemilik (owner)
+              p 6 = Nama Group
+              p 7 = Jumlah link file
+              p 8 = Besar file dalam byte
+              p 9 = Bulan dan tanggal update terakhir
+              p 10 = Waktu update terakhir
+              p 11 = Nama file/device
+      section
+        h2.bullet Perintah-perintah penting pada DAC :
+      section
+        h3 Mengubah izin akses file :
+        p(align="left") 1. chmod < u | g | o > < + | - > < r | w | x > nama file
+        p Contoh : 
+        h3 chmod u+x g+w o-r letter 
+        p(align="left") tambahkan akses eksekusi(x) untuk user (u), tambahkan juga akses write(w) untuk group (g) dan kurangi izin akses read(r) untuk other(o) user.
+      section
+        p(align="left") 2. chmod metode octal, chmod - - - namafile , digit dash ( - ) pertama untuk izin akses user, digit ke-2 untuk izin akses group dan digit ke-3 untuk izin akses other, berlaku ketentuan : r(read) = 4, w(write) = 2, x (execute) = 1 dan tanpa izin akses = 0.
+        p Contoh :
+        h3 Chmod 740 borg.dead.letter
+        p(align="left") Berarti : bagi file borg.dead.letter berlaku
+        p(align="left") digit ke-1 -> 7=4+2+1=izin akses r,w,x penuh untuk user.
+        p(align="left") digit ke-2 -> 4=4+0+0=izin akses r untuk group
+        p(align="left") digit ke-3 -> 0=0+0+0=tanpa izin akses untuk other user.
+      section
+        h3 Mengubah kepemilikan : chown (owner/pemilik) (nama file)
+        h3 Mengubah kepemilikan group : chgrp (group owner) (nama file)
+        h3 Menggunakan account root untuk sementara :
+        pre
+          ~$ su            ; system akan meminta password
+          password password : **** ; prompt akan berubah jadi pagar,         
+                  tanda login sebagai root
+          ~# _                                                     
+      section
+        h2 Pengamanan pada File
+      section
+        h2 Perlindungan Akses File / Folder
+        ol
+          li Menggunakan password. Biasanya setiap aplikasi untuk pemrosesan dokumen mempunyai fitur untuk mengamankan dokumen tersebut dengan password. Password tersebut bahkan dibagi untuk read-only atau pun untuk modifikasi.
+
+          li Menentukan akses files/folder sesuai dengan user yang ditentukan. Fitur ini ada pada keluarga Windows NT dan Linux.
+
+          li Menggunakan  program third party seperti AxCrypt, WinCry, Folder Guard dll. Program third party tersebut mendukung enkripsi files dan folder bahkan mendukung penghapusan files secara aman (secure deletion)
+      section
+        h2 Perlindungan data/files dari kerusakan dan kehilangan
+        
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
