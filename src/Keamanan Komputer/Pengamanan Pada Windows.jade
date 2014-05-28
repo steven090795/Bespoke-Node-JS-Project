@@ -69,12 +69,71 @@ html
       section
         h2 Keamanan Jaringan
       section
-        h3.bullet Jenis Keamanan Jaringan Windows :
-          p.bullet Model keamanan user level : account user akan mendapatkan akses untuk pemakaian bersama dengan menciptakan share atas directory atau printer.
+        h2.bullet Jenis Keamanan Jaringan Windows
+        ul
+          li Model keamanan user level : account user akan mendapatkan akses untuk pemakaian bersama dengan menciptakan share atas directory atau printer.
+          li Model keamanan Share level : dikaitkan dengan jaringan peer to peer, dimana user manapun membagi sumber daya dan memutuskan apakah diperlukan password untuk suatu akses tertentu.
+      section
+        h2.bullet Cara Windows menangani keamanan jaringan:
+      section
+        ol
+          li Memberikan permission
           ul
-            li Keunggulan : kemampuan untuk memberikan user tertentu akses ke sumberdaya yang di-share dan menentukan jenis akses apa yang diberikan.
-            li Kelemahan : proses setup yang kompleks karena administrator harus memberitahu setiap user dan menjaga policy system keamanan tetap dapat dibawah kendalinya dengan baik.
-
+            li Permission NTFS local
+            li Permission shere
+          li Keamanan RAS (Remote Access Server)<br/>Melakukan remote access user menggunakan dial-up :
+          ul
+            li Otentikasi user name dan password yang valid dengan dial-in permission.
+            li Callback security : pengecekan nomor telepon yang valid. 
+            li Auditing : menggunakan auditing trails untuk melacak ke/dari siapa, kapan user memiliki akses ke server dan sumberdaya apa yang diakses.
+      section
+        ol
+          li Pengamanan Layanan internet :
+          ul
+            li Firewall terbatas pada Internet Information server (IIS).
+            li Menginstal tambahan proxy seperti Microsoft Proxy server.
+          li Share administrative : memungkinkan Administrator mendapatkan akses ke server windows atau workstation melalui jaringan
+      section
+        h2 Keamanan pada printer
+      section
+        h3.bullet Dilakukan dengan mensetting properties printer :
+        ul
+          li Menentukan permission : full control, Manage document, print
+          li Biasanya susunan permission pada Windows secara default :
+          ul
+            li Adminstrator – full control
+            li Owner – Manage document
+            li Semua user – print
+          li Mengontrol print job, terdiri dari :
+          ul
+            li Setting waktu cetak
+            li Prioritas
+            li Notifikasi (orang yang perlu diberi peringatan)
+          li Set auditing information
+      section
+        h2 Keamanan Registry
+      section
+        h3.bullet Tools yang disediakan dalam pengaksesan registry :
+        ul
+          li System policy editor : mengontrol akses terhadap registry editor, memungkinkan administrator mengedit dan memodifikasi value tertentu dalam registry dengan berbasis grafis.
+          li Registry editor (regedit32.exe) : tools untuk melakukan edit dan modifikasi value dalam registry.
+          li Windows NT Diagnostics (winmsd.exe) : memungkinkan user melihat setting isi registry dan valuenya tanpa harus masuk ke registry editor sendiri.
+      section
+        h3.bullet Tools backup untuk registry yaitu :
+        ul
+          li Regback.exe memanfaatkan command line / remote session untuk membackupr registry.
+          li ntbackup.exe : otomatisasi backup HANYA pada Tape drive, termasuk sebuah kopi dari file backup registry local.
+          li Emergency Repair Disk (rdisk.exe) : memback-up hive system dan software dalam registry.
+      section
+        h2.bullet Audit dan Pencatatan Log
+        ul
+          li Pencatatan logon dan logoff  termasuk pencatatan dalam multi entry login
+          li Object access (pencatatan akses objek dan file)
+          li Privilege Use (paencatatan pemakaian hak user)
+          li Account Management (manajemen user dan group)
+          li Policy change (Pencatatan perubahan kebijakan keamanan)
+          li System event (pencatatan proses restart, shutdown dan pesan system)
+          li Detailed tracking (pencatatan proses dalam system secara detail)
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
