@@ -170,6 +170,38 @@ html
         h3  Secure socket Layer (SSL)
         p mengenkripsi data yang dikirimkan lewat port http.
         p Konfigurasi dilakukan di : web server APACHE dengan ditambah PATCH SSL.
+      section
+        h2 Logging
+      section
+        h3 Definisi : Prosedur dari Sistem Operasi atau aplikasi merekam setiap kejadian dan menyimpan rekaman tersebut untuk dapat dianalisa
+      section
+        h3 Semua file log linux disimpan di directory /var/log:
+        ol
+          li Lastlog : rekaman user login terakhir kali
+          li last : rekaman user yang pernah login dengan mencarinya pada file /var/log/wtmp
+          li xferlog : rekaman informasi login di ftp daemon berupa data wktu akses, durasi transfer file, ip dan dns host yang mengakses, jumlah/nama file, tipe transfer(binary/ASCII), arah transfer(incoming/outgoing), modus akses(anonymous/guest/user resmi), nama/id/layanan user dan metode otentikasi.
+          li Access_log : rekaman layanan http / webserver.
+          li Error_log : rekaman pesan kesalahan atas service http / webserver berupa data jam dan waktu, tipe/alasan kesalahan 
+          li Messages : rekaman kejadian pada kernel ditangani oleh 2 daemon :
+          ul 
+            li Syslog > merekam program yang dijalankan (syslog.conf)
+            li Klog > menerima dan merekam semua pesan kernel
+        section
+          h2 Deteksi Penyusupan (Instrusion Detection)
+        section
+          h3 Definisi:aktivitas mendeteksi penyusupan secara cepat dengan menggunakan program khusus secara otomatis yang disebut Intrusion Detection System
+          h3 Tipe Dasar IDS
+          ol 
+          li Ruled based system : mencatat lalu lintas data jika sesuai dengan database dari tanda penyusupan yang telah dikenal, maka langsung dikategorikan penyusupan. Pendekatan Ruled based system :
+            ul
+              liPreemptory (pencegahan) ; IDS akan memperhatikan semua lalu lintas jaringan, dan langsung bertindak jika dicurigai ada penyusupan.
+              li Reactionary (reaksi) ; IDS hanya mengamati file log saja.
+          li Adaptive system : penerapan expert system dalam mengamati lalu lintas jaringan.
+          h3 Program IDS :
+          ol
+          li Chkwtmp : program pengecekan terhadap entry kosong
+          li Tcplogd : program pendeteksi stealth scan (scanning yang dilakukan tanpa membuat sesi tcp)
+          li Host entry : program pendeteksi login anomaly (perilaku aneh)>bizarre behaviour (perilaku aneh), time anomalies (anomaly waktu), local anomaly.
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
