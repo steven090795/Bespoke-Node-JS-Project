@@ -16,13 +16,14 @@ html
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
     <option value="index.html" >Keamanan Jaringan</option></a>
     <option value="" selected="1">Pengamanan Pada Linux</option></a>
+    <option value="Pengamanan Pada Windows.html">Pengamanan Pada Windows</option></a>
     </select>
     </div>
     article
      section
         h1 Pengamanan pada Sistem Operasi LINUX
       section
-        h3.bullet Komponen Arsitektur Keamanan Linux :
+        h2.bullet Komponen Arsitektur Keamanan Linux :
       section
         h2.bullet Account Pemakai (user account)
         h3.bullet Keuntungan : 
@@ -102,7 +103,7 @@ html
               p 8 = Besar file dalam byte
               p 9 = Bulan dan tanggal update terakhir
               p 10 = Waktu update terakhir
-              p 11 = Nama file/device
+              p 11 = Nama file/device 
       section
         h2.bullet Perintah-perintah penting pada DAC :
       section
@@ -141,19 +142,34 @@ html
           li Bloking isi paket seperti applet java, activeX, Vbscript, Cookies
           li Autentikasi koneksi dan enkripsi
       section
-        h2 Pengamanan pada File
+        h2 Enkripsi (encryption)
       section
-        h2 Perlindungan Akses File / Folder
-        ol
-          li Menggunakan password. Biasanya setiap aplikasi untuk pemrosesan dokumen mempunyai fitur untuk mengamankan dokumen tersebut dengan password. Password tersebut bahkan dibagi untuk read-only atau pun untuk modifikasi.
-
-          li Menentukan akses files/folder sesuai dengan user yang ditentukan. Fitur ini ada pada keluarga Windows NT dan Linux.
-
-          li Menggunakan  program third party seperti AxCrypt, WinCry, Folder Guard dll. Program third party tersebut mendukung enkripsi files dan folder bahkan mendukung penghapusan files secara aman (secure deletion)
+        h3.bullet Penerapan Enkripsi di linux :
+          ul
+            li Enkripsi password menggunakan DES ( Data Encryption Standard ) 
+            li Enkripsi komunikasi data
       section
-        h2 Perlindungan data/files dari kerusakan dan kehilangan
-        
-
+        h3.bullet Secure Shell (SSH)
+        p(align="left").bullet Program yang melakukan loging terhadap komputer lain dalam jaringan, mengeksekusi perintah lewat mesin secara remote dan memindahkan file dari satu mesin ke mesin lainnya.
+        br 
+        br 
+        p(align="left").bullet Enkripsi dalam bentuk Blowfish, IDEA, RSA, Triple DES.
+        p(align="left").bullet Isi SSH Suite :
+        ul(align="left")
+          li scp (secure shell copy) -> mengamankan penggandaan data
+          li ssh (secure shell client) -> model client ssh seperti telnet terenkripsi.
+          li ssh-agent -> otentikasi lewat jaringan dengan model RSA.
+          li sshd (secure shell server) -> di port 22
+          li ssh-keygen -> pembuat kunci (key generator) untuk ssh
+      section
+        p.bullet Konfigurasi dilakukan di :
+          ul
+            li /etc/sshd_config (file konfigurasi server)
+            li /etc/ssh_config (file konfigurasi client)
+      section
+        h3  Secure socket Layer (SSL)
+        p mengenkripsi data yang dikirimkan lewat port http.
+        p Konfigurasi dilakukan di : web server APACHE dengan ditambah PATCH SSL.
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')

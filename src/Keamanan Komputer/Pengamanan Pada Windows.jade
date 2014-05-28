@@ -1,0 +1,82 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Pengamanan Pada Windows
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+    <div class="header">
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="index.html" >Keamanan Jaringan</option></a>
+    <option value="Pengamanan Pada Linux.html">Pengamanan Pada Linux</option></a>
+    <option value="" selected="1">Pengamanan Pada Windows</option></a>
+    </select>
+    </div>
+    article
+     section
+        h1 Pengamanan pada Sistem Operasi Windows
+      section
+        h2.bullet Komponen Arsitektur Keamanan Windows :
+      section
+        h2.bullet Adminisrasi User dan Group
+        h3.bullet Jenis Account User :
+        p
+          ul
+            li Administrator 
+            li Guest
+            li User 
+      section
+        h3.bullet Jenis Account Gorup :
+        p
+          ul
+            li Administrator 
+            li Guest
+            li User
+            li Operator back-up
+            li Power user
+            li Operator server
+            li Operator account
+            li Operator printer
+      section
+        h3.bullet Hak User / Grup :
+        ul
+          li Hak basic : acces computer from network, back-up files/directory, change system time, logon locally, manage auditing and security, log (event viewer), restore files and directory, shutdown system, take ownership files or other object, dll.
+          li Hak advance : access service and kernel untuk kebutuhan pengembangan system.
+      section
+        h2.bullet Model Keamanan Windows
+        h3.bullet LSA (Local security Authority) : menjamin user memiliki hak untuk mengakses system. Inti keamanan yang menciptakan akses token, mengadministrasi kebijakan keamanan local dan memberikan layanan otentikasi user. 
+        h3.bullet Proses logon : menerima permintaan logon dari user (logon interaktif dan logon remote), menanti masukan username dan password yang benar. Dibantu oleh Netlogon service.
+      section 
+        h3.bullet Security Account Manager (SAM) : dikenal juga sebagai directory service database, yang memelihara database untuk account user dan memberikan layan validasi untuk proses LSA.
+        h3.bullet Security Reference Monitor (SRM) : memeriksa status izin user dalam mengakses, dan hak user untuk memanipulasi obyek serta membuat pesan-pesan audit.
+      section
+        h2.bullet Keamanan Sumber daya lokal
+        h3.bullet Obyek dalam Windows  [file, folder (directory), proses, thread, share dan device], masing-masing akan dilengkapi dengan <strong>Obyek Security Descriptor</strong>
+      section
+        h3.bullet Obyek Security Descriptoryang terdiri dari :
+        ul
+          li Security ID Owner : menunjukkan user/grup yang memiliki obyek tersebut, yang memiliki kekuasaan untuk mengubah akses permission terhadap obyek tersebut.
+          li Security ID group : digunakan oleh subsistem POSIX saja.
+          li Discretionary ACL (Access Control List) : identifikasi user dan grup yang diperbolehkan / ditolak dalam mengakses, dikendalikan oleh pemilik obyek.
+          li System ACL : mengendalikan pesan auditing yang dibangkitkan oleh system, dikendalikan oleh administrator keamanan jaringan.
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
