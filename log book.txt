@@ -1,0 +1,90 @@
+=======================
+INFORMASI UMUM
+
+Nama kelompok: Orange Team
+Judul Topik: Keamanan Komputer, Branching Pada Git
+Alamat Github: https://github.com/steven090795/Bespoke-Node-JS-Project
+Clone Github: https://github.com/steven090795/Bespoke-Node-JS-Project.git
+Alamat Trello: https://trello.com/b/LeP3n51j
+Anggota 1:
+	Nama: ALVIN PUTRA
+	NIM : 121110839
+Anggota 2:
+	Nama: ROBERT
+	NIM : 121111176
+Anggota 3:
+	Nama: STEVEN
+	NIM : 121110235
+
+=======================
+
+Scrum master 1: Steven (121110235)
+Scrum master 2: 
+Scrum master 3:
+
+SPRINT
+------
+Sprint 1: Coding Bahan
+26/5 - 29/5
+Scrum master 1
+
+Sprint 2:
+
+
+Sprint 30: 
+
+
+Progress Harian (Diupdate tiap hari)
+------------------------------------
+
+26/5 
+Daily Scrum
+Steven:
+1. Build Repository
+2. Cari Bahan & edit script for compile file jade & css in other src folder
+3. -
+
+Alvin:
+1. Clone Repository
+2. Cari Bahan & Reclone(Clone on drive C: work)
+3. Error head on clone
+
+Robert:
+1. Clone Repository
+2. Cari Bahan & ReClone(clone Error)
+3. ASK: Judul bisa di terima?
+
+27/5
+Daily Scrum
+Steven:
+1. CSS problem fixed
+2. Coding Jade Keamanan Komputer 
+3. Stuck on table tag an pre tag
+
+Alvin:
+1. Menambahkan resources persentasi HBCD
+2. Belajar jade buat persentasi HBCD
+3. Syntax jade susah (belajar jade)
+
+Robert:
+1. Clone Berhasil, Start Coding Jade Keamanan Komputer
+2. Start Coding Jade Branching Pada Git & menyusun folder & fix somebugs
+3. -
+
+28/5
+Daily Scrum
+
+Steven:
+1. CSS problem fixed
+2. Coding Jade Keamanan Komputer 
+3. Stuck on table tag an pre tag
+
+Alvin
+1.
+2.
+3.
+
+Robert
+1.
+2.
+3.
