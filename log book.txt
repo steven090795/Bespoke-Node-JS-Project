@@ -91,4 +91,4 @@ Alvin
 Robert
 1. Membuat Jade Branching Pada Git(kemarin)
 2. Menambahkan coding pada Pengaman pada Linux + Membuat file jade Pengamanan Pada File
-3. Kurang mengerti dengan Branching Pada Git sehingga susah untuk meringkas
+3. Bahan Terlalu Kompleks
