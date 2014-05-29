@@ -16,6 +16,7 @@ html
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
     <option value="index.html">Branching Pada Git</option></a>
     <option value="" selected="1">Manajemen Branch</option></a>
+    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
     </select>
     </div>
     article
@@ -36,8 +37,26 @@ html
           pre iss53   93b412c fix javascript issue
           pre * master  7a98805 Merge branch 'iss53'
           pre testing 782fd34 add scott to the author list in the readmes
-
-
+      section
+        h3 Kegunaan lain dari mencari tahu di branch mana anda berada adalah untuk menyaring daftar ini hingga branch yang telah atau belum anda merge (gabungkan) ke branch yang dimana anda berada. Pilihan <strong>--merged</strong> dan <strong>--no-merged</strong> yang berguna telah tersedia di Git sejak versi 1.5.6 untuk tujuan ini. Untuk melihat branch mana yang sudah digabung ke dalam branch yang dimana anda berada, anda dapat menjalankan <strong>git branch --merged</strong>
+      section
+        pre $ git branch --merged
+        pre iss53
+        pre * master
+      section
+        h3 Karena anda sudah melakukan merge pada <strong>iss53</strong> sebelumnya, anda melihatnya dalam daftar anda. Branch yang berada dalam daftar ini tanpa * di depannya umumnya aman untuk dihapus dengan <strong>git branch -d</strong>; anda telah memadukan hasil kerja mereka ke branch lain, sehingga anda tidak akan kehilangan apa-apa.
+      section
+        h3 Untuk melihat semua branch yang berisi pekerjaan yang belum anda merge (gabungkan), anda dapat menjalankan <strong>git branch --no-merged</strong>:
+        pre $ git branch --no-merged
+        pre testing             
+      section
+        h3 Ini menunjukkan branch anda yang lainnya. Karena ini berisi pekerjaan yang belum digabungkan, jika anda mencoba untuk menghapusnya dengan <strong>git branch -d</strong> maka akan gagal:
+      section
+        pre $ git branch -d testing
+        pre error: The branch 'testing' is not an ancestor of your current HEAD.
+        pre If you are sure you want to delete it, run 'git branch -D testing'.
+      section
+        h3 Jika anda benar-benar ingin menghapus branch tersebut dan kehilangan pekerjaan yang ada disitu, anda dapat memaksakannya dengan <strong>-D</strong>, sebagaimana yang ditunjukkan oleh pesan bantuan.
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
