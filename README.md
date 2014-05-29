@@ -14,5 +14,8 @@ Orange Team
  - Fokus Pada folder src/Keamanan Komputer
  - access halaman Keamanan komputer setelah grunt server : http://localhost:8000/Keamanan Komputer/index.html
 
- ### 28/5/2014
- - 
+### 28/5/2014
+ - Coding Persentasi
+
+### 29/5/2014
+ - Persentasi Basis text harus Siap	
