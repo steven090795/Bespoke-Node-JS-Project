@@ -1,0 +1,139 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Keamanan Komputer
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+    <div class="header">
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="" selected="1">Keamanan Jaringan</option></a>
+    <option value="Pengamanan Pada Linux.html">Pengamanan Pada Linux</option></a>
+    <option value="Pengamanan Pada Windows.html">Pengamanan Pada Windows</option></a>
+    </select>
+    </div>
+    article
+
+      section
+        h1 Pengamanan Pada Registry
+      section
+        h2 Definisi
+        h3 Registry yaitu hirarki informasi database dari OS Windows maupun aplikasi pendukung untuk menentukan konfigurasi dari system.
+        h2 Bagian (Section) Registry
+        h3 Terbagi atas 5 bagian yg disebut hive. Tiap hive mempunyai penyimpanan tersendiri (file) dan log.Di dalam hive terdiri dari key dan subkeys. Tiap key dan subkey mempunyai data value.Tiap data value terdiri dari nama , type dan isi value.
+      section
+        h2 Hive dan Singkatannya
+        h3 HKEY merupakan singakatan dari Hive Key
+        table(width="600" style="text-align:left")
+          tr
+            td
+              p HKEY_CLASSES_ROOT, a.k.a. HKCR
+              p - HKEY_CLASSES_ROOT berisi informasi tentang registered applications seperti file associations dan OLE Object Class IDs
+              p HKEY_CURRENT_USER, a.k.a. HKCU
+              p - HKEY_CURRENT_USER berisi setting yang spesifik untuk currently logged-in user
+              p HKEY_LOCAL_MACHINE, a.k.a. HKLM
+              p - Mempunyai subkey "SAM", "SECURITY", "SYSTEM", dan "SOFTWARE". Subkey kelima “HARDWARE” dihasilkan secara dynamic dan berisi plug and play devices yang terdeteksi.
+              p HKEY_USERS, a.k.a. HKU
+              p - Berisi setting semua user yang ada di komputer. Akumulasi dari HKCU.
+              p HKEY_CURRENT_CONFIG, a.k.a. HKCC
+              p - HKEY_CURRENT_CONFIG berisi informasi yang didapatkan pada waktu runtime. Informasi pada key ini tidak disimpan secara permanen pada disk tetapi tetap diregenerate pada waktu booting
+      section
+        h2 Data Value
+          h3 
+            table(width="600" style="text-align:left")
+              tr
+                td(width="300")
+                  p REG_BINARY
+                  p REG_COLOR_RGB
+                  p REG_DWORD
+                  p REG_DWORD_BIG_ENDIAN
+                  p REG_DWORD_LITTLE_ENDIAN
+                  p REG_EXPAND_SZ
+                  p REG_FILE_NAME
+                  p REG_FILE_TIME
+                  p REG_FULL_RESOURCE_DESCRIPTOR
+                  p REG_LINK
+                  p REG_MULTI_SZ
+                  p REG_NONE
+                  p REG_QWORD
+                  p REG_QWORD_LITTLE_ENDIAN
+                  p REG_RESOURCE_LIST
+                  p REG_RESOURCE_REQUIREMENTS_LIST
+                  p REG_SZ
+                  p REG_UNKNOWN
+
+      section
+        h2 Keyboard Interaction
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+
+      section
+        h2 Touch Interaction
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
+
+      section
+        h2 Responsive Slides
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
+
+      section
+        h2 Bullet List
+        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
+        ul
+          li Bullet 1
+          li Bullet 2
+          li Bullet 3
+      section
+        h2 Syntax Highlighting
+        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        hr
+        pre
+          code.language-javascript.
+            bespoke.from('article', {
+              keys: true,
+              touch: true,
+              hash: true,
+              state: true,
+              bullets: 'li, .bullet'
+            });
+
+      section(data-bespoke-hash='named-route')
+        h2 Named Route
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
+        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+
+      section(data-bespoke-state='emphatic')
+        h2 Emphatic Slide!
+        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+
+      section
+        h2.bullet Just the beginning...
+        hr
+        ul
+          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
+          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
+          li Edit JavaScript in <em>'src/scripts/main.js'</em>
+        hr
+        ul
+          li
+            strong Enjoy! :)
+            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
