@@ -68,7 +68,288 @@ html
                   p REG_RESOURCE_REQUIREMENTS_LIST
                   p REG_SZ
                   p REG_UNKNOWN
-
+      section
+        h2 Windows XP boot process
+          h3 
+            ul
+              li System power up, inisialisasi video (tampilan) dan test hardware (termasuk memori). Proses ini disebut dengan POST (Power On Self Test)
+              li Selesai POST, system membaca setiap adapter dan biasanya dilakukan oleh BIOS.
+              li System boot loader membaca boot sector atau MBR (Master Boot Record)
+              li MBR membaca file NTLDR dan mempass nya ke NTLDR
+              li NTLDR berubah ke mode 32  bit(intel x86 selalu memboot di dalam mode 16 bit). Kemudian membaca boot.ini
+              li Di dalam boot ini terkandung informasi tentang operating system yang bisa diload (dijalankan)
+      section      
+              li Kemudian NTLDR akan menjalankan ntdetect.com Tugas ntdetect adalah membaca informasi hardware dan menyimpan ke HKLM/Hardware. Kemudian process dipass kembali ke NTLDR.
+              li NTLDR kemudian menjalankan  Windows NT Kernel, menjalankan services dan start Windows.
+              li Pada waktu kernel dijalankan, maka ada menjalankan juga HAL (Hardware Abstraction Layer) yg digunakan untuk menjalankan service/konfigurasi perangkat keras.
+              li Registry HKLM\_System dibaca ke memory. Semua driver kemudian dibaca.
+              li Sesudah itu maka kemudian Windows XP dimulai tergantung dari setting startup yg dijalankan dan masuk ke WinLogon.
+      section
+        h2 Lokasi dari File Registry
+        h3 %systemroot%\System32\Config
+        table(width="600" style="text-align:left")
+          tr
+            td
+              p - autoexec.nt The file that initializes the MS-DOS environment unless a different startup file is specified in an application's PIF.
+              p - config.nt The file that initializes the MS-DOS environment unless a different startup file is
+              specified in an application's PIF.
+              p - Default The default registry file.
+              p - SAM The SAM (Security Accounts Manager) registry file.
+              p - Security The security registry file.
+              p - Software The application software registry file.
+              p - System The system registry file.
+      section
+        h3 In a typical Windows XP installation, the %SystemRoot%\System32\Config directory contains these files:
+        table(width="600" style="text-align:left")
+          tr
+            td
+              p AppEvent.evt The application(s) event log file.
+              p DEF$$$$$.del The default registry recovery file.
+              p Default The default registry file.
+              p Default.sav A backup copy of the information contained in the default registry file.
+              p DnsEvent.evt The DNS server event log.
+              p File Rep.evt One of two File Replication Service event log files.
+              p Netlogon.dnb A NetLogon support file.
+              p Netlogon.dns A NetLogon support file.
+              p NTDS.evt The Windows XP directory service event log.
+              p NtFrs.evt The second of two File Replication Service event log files.
+      section
+          h3
+            table(width="600" style="text-align:left")
+              tr
+                td
+                  p - SAM The Security Accounts Manager registry file.
+                  p - SecEvent.evt The security event log.
+                  p - Security The security registry file.
+                  p - SOF$$$$$.del The software registry recovery file.
+                  p - Software The application software registry file.
+                  p - Software.sav A backup copy of the information contained in the software registry file.
+                  p - SYS$$$$$.del The system registry recovery file.
+                  p - SysEvent.evt The system events log.
+                  p - System The system registry file.
+                  p - System.alt A copy of the information contained in the system registry file.
+                  p - System.sav A backup copy of the information contained in the system registry file.
+                  p - Userdiff The file that migrates preexisting user profiles from previous versions of Windows
+                  NT to Windows XP.
+      section
+        h2 Utility untuk mengakses Registry
+        h3 Untuk mengakses registry digunakan utility dari windows yaitu : REGEDIT
+        h3 Cara menjalankan regedit :
+        h3 Start -> Run -> Regedit [enter]
+        h1 IMAGE
+      section
+        h2 Cara Membackup Registry
+        ul
+          li Mengunakan utility seperti ERUNT - The Emergency Recovery Utility NT
+          li Menggunakan utility seperti Error Repair Professional, Registry Mechanic, TuneUp Pro dsbnya. Untuk memperbaiki / mencegah registry rusak.
+        h1 IMAGE
+      section
+        h2 Beberapa Tips dan Tricks yang terdapat pada policices HCKU dan HKLM
+        h3
+          ul
+            li Menyembunyikan Menu Recent Documents
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name
+                  p NoRecentDocsMenu 
+                td
+                  p Type
+                  p REG_DWORD
+                td 
+                  p Value
+                  p 1 (Enable)
+            li Menyembunyikan Menu Find
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoFind 
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menyembunyikan Menu Run
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoRun
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menyembunyikan Menu Turn Off Computer
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoCLose
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menonaktifkan Klik-kanan Pada Desktop
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoViewContextMenu 
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menyembunyikan System Tray
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoTrayItemsDisplay 
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menyembunyikan Icon di Desktop
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer/Advanced
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p HideIcons
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menghilangkan Tab Screen Saver
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System
+            p       HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoDispScrSavPage 
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menonaktifkan Display Properties
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoDispCPL
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menyembunyikan Menu Control Panel
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoControlPanel
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menonaktifkan MS-DOS Command Prompt
+            p Key : HKCU\Software\Policies\Microsoft\Windows\System
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoDisableCMD
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menyembunyikan Folder Options
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoFolderOptions
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Menonaftifkan Regedit
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p DisableRegistryTools
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+            li Menonaktifkan Task Manager
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p DisableTaskMgr
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 1 (Enable)
+      section
+            li Pengaturan Autorun
+            p Key : HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+            table(width="600" style="text-align:left")
+              tr
+                td(width="250" style="text-align:center")
+                  p Name  
+                  p NoDriveTypeAutoRun
+                td
+                  p Type
+                  p REG_DWORD 
+                td
+                  p Value
+                  p 0x00000091 (145)
       section
         h2 Keyboard Interaction
         h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
