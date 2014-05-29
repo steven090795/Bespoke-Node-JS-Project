@@ -19,16 +19,96 @@ html
     </select>
     </div>
     article
+        section
+            h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
+            h2 Orange Team
+        section
+            h2.bullet Tools Used
+            ul
+                li bfi.exe (Build Floppy Image - to create bootable image from files)
+                li mkisofs.exe (a tool to create/build the CDRom ISO image file)
+                li build-iso.cmd (batch file to create floppy and iso image)
+        section
+            h2.bullet We will need some files from Windows ME or Windows XP startup disk
+            ul
+                li io.sys (Dos Input Output System file)
+                li msdos.sys (Dos system file)
+                li command.com (MS-Dos mode command line interpreter)
+                li himem.sys (An extended memory manager that is included with DOS and Windows)
+                li mscdex.exe (Microsoft CD-Rom Extension)
+                li oakcdrom.sys (Generic CD-Rom driver, work with the most of all IDE CD-ROM drives)
+                li xmsdsk.exe (Adjustable XMS RAMdisk Driver - Freeware)
+                li ctmouse.exe (Mouse Driver For Dos - also works on USB Mouse - Freeware) or mouse.com
+            <a href="http://www.hiren.info/download/freeware-tools/bootcd.zip">All the necessary files are included in bootcd.zip Download (468KB)</a>
+        section
+            p AUTOEXEC.BAT
+            pre
+            code.language-bat.
+                @ECHO OFF
+                MSCDEX.EXE /D:CDDRIVER /L:X
+                XMSDSK.EXE 51200 R: /t /y
+                CTMOUSE.EXE
+                PATH=A:\;R:\
+                GOTO %CONFIG%
 
-      section
-        h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
+                :TESTDISK
+                COPY X:\TESTDISK\*.* R:
+                R:\TESTDISK.EXE
+                GOTO DOS
+        section
+            pre
+            code.language-ini.
+                :GHOST
+                COPY X:\GHOST\GHOST.EXE R:
+                R:\GHOST.EXE
+                GOTO DOS
 
-      section
-        h2.bullet Tools Used
-        ul
-          li bfi.exe (Build Floppy Image - to create bootable image from files)
-          li mkisofs.exe (a tool to create/build the CDRom ISO image file)
-          li build-iso.cmd (batch file to create floppy and iso image)
+                :NTFS
+                COPY X:\NTFS\*.* R:
+                R:\NTFS4DOS.EXE
+                GOTO DOS
+
+                :RPM
+                COPY X:\RPM\*.* R:
+                R:\RPM.EXE
+                GOTO DOS
+        section
+            pre
+            code.language-ini.
+                :DOS
+                ECHO  X: CD DRIVE
+                ECHO  R: RAM DRIVE
+        section
+            p CONFIG.SYS
+            pre
+            code.language-ini.
+                [MENU]
+                menuitem=DOS, Dos
+                menuitem=TESTDISK, TestDisk
+                menuitem=GHOST, Ghost
+                menuitem=NTFS, Ntfs
+                menuitem=RPM, Partition Manager
+
+                [DOS]
+                DEVICE=OAKCDROM.SYS /D:CDDRIVER /L:X
+
+                [TESTDISK]
+                include=DOS
+        section
+            pre
+            code.language-ini.
+                [GHOST]
+                include=DOS
+
+                [NTFS]
+                include=DOS
+
+                [RPM]
+                include=DOS
+
+                [COMMON]
+                LASTDRIVE=Z
+        section
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')

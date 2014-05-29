@@ -92,3 +92,19 @@ Robert
 1. Membuat Jade Branching Pada Git(kemarin)
 2. Menambahkan coding pada Pengaman pada Linux + Membuat file jade Pengamanan Pada File
 3. Bahan Terlalu Kompleks
+
+29/5
+Steven:
+1. Add Coding Fix Bugs(kemarin)
+2. Coding Branching pada Git Manajemen Branch + Alur Kerja Branch
+3. Masih Banyak Bugs, Sources ada yang belum ditranslate
+
+Alvin
+1. Coding Pengamanan Pada Windows(kemarin)
+2. Menambahkan coding pada Alur Kerja Branching(get merged)
+3. 
+
+Robert
+1. Coding Pengamanan File(kemarin)
+2. Membuat Persentasi Pengamanan Pada Registry
+3.
