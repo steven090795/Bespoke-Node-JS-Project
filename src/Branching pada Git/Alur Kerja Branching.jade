@@ -24,7 +24,32 @@ html
       section
         h1 Alur Kerja Branching
       section
-       
+        p Karena Git menggunakan three-way merge yang sederhana, menggabungkan dari satu branch ke yang lainnya berkali-kali dalam jangka yang panjang umumnya mudah untuk dilakukan. Ini berarti anda dapat memiliki beberapa branch yang selalu terbuka dan yang anda gunakan untuk tahap yang berbeda dari siklus development anda; anda dapat melakukan merge secara regular atas beberapa dari mereka ke yang lainnya.
+      section
+        p Banyak pengembang Git memiliki alur kerja yang mencakup pendekatan ini, seperti hanya memiliki kode yang sepenuhnya stabil dalam branch master mereka - mungkin hanya kode yang telah atau akan dirilis. Mereka memiliki branch paralel lain yang bernama develop atau next dimana mereka mengerjakan darinya atau menggunakannya untuk menguji stabilitas - belum tentu selalu stabil, namun setiap kali sampai ke keadaan stabil, branch dapat digabungkan ke master. Ini digunakan untuk melakukan pull dari topic branch (branch berumur pendek, seperti branch iss53 anda sebelumnya) ketika mereka telah siap, untuk memastikan mereka lolos semua pengujian dan tidak memiliki bug (kesalahan).
+      section
+        p Pada kenyataannya, kita sedang berbicara mengenai pointer yang bergerak menaiki garis commit yang anda buat. Branch yang stabil berada jauh di bawah garis histori dari commit anda, dan branch yang bersifat bleeding-edge berada di histori terdepan (lihat Gambar 3-18).
+      section
+        p Gambar 3-18. Branch yang lebih stabil umumnya berada jauh di bawah histori commit.
+      section
+        p Secara umum adalah lebih mudah untuk memikirkan mereka sebagaimana silo(?) bekerja, di mana sekumpulan commit naik ke tingkatan silo yang lebih stabil ketika mereka telah sepenuhnya diuji (lihat Gambar 3-19).
+      section
+        p Gambar 3-19. Mungkin akan membantu untuk berpikir branch anda sebagai silo.
+      section
+        p Anda dapat terus melakukan hal ini untuk beberapa tingkat stabilitas. Beberapa proyek yang lebih besar juga memiliki branch proposed atau pu (proposed updates) yang memiliki branch terintegrasi yang mungkin belum siap untuk masuk ke dalam branch next atau master. Idenya adalah bahwa branch anda berada pada berbagai tingkat stabilitas; ketika mereka mencapai tingkatan yang lebih stabil, mereka digabungkan ke dalam branch di atas mereka. Sekali lagi, memiliki long-running branch tidaklah diperlukan, tetapi seringkali membantu, terutama ketika anda sedang berhadapan dengan proyek-proyek yang sangat besar atau kompleks.
+      section
+        h2 Branch Berjangka Pendek (Topic Branches)
+        p Kita ambil contoh berupa melakukan beberapa pekerjaan (pada master), branching untuk sebuah masalah (iss91), bekerja di atasnya untuk sesaat, melakukan branching kedua kalinya untuk mencoba cara lain dalam menangani hal yang sama (iss91v2), kembali ke branch master dan bekerja di sana untuk sementara, dan kemudian melakukan branching disana untuk melakukan beberapa pekerjaan yang anda belum yakin apakah ide itu baik (branch dumbidea). Histori dari commit anda akan terlihat seperti Gambar 3-20.
+      section
+        p Gambar 3-20. Histori dari commit anda dengan beberapa topic branch.
+      section
+        p Sekarang, katakanlah anda memutuskan anda suka solusi kedua atas masalah anda dibanding yang lain (iss91v2); dan anda menunjukkan branch dumbidea ke rekan kerja anda, dan tampak menjadi sesuatu yang jenius. Anda dapat membuang branch iss91 yang asli (kehilangan commit C5 dan C6) dan menggabungkan dua lainnya. Histori anda kemudian tampak seperti Gambar 3-21.
+      section
+        p Gambar 3-21. Histori anda setelah penggabungan dumbidea dan iss91v2.
+      section
+        p Sangat penting untuk diingat ketika anda melakukan semua ini bahwa kesemua branch tersebut berada di lokal. Ketika anda melakukan branching dan merging, semuanya dilakukan hanya dalam repositori Git anda - tidak ada komunikasi yang terjadi dengan server.
+
+
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
