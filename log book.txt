@@ -19,7 +19,7 @@ Anggota 3:
 =======================
 
 Scrum master 1: Steven (121110235)
-Scrum master 2: 
+Scrum master 2: Robert (121111176)
 Scrum master 3:
 
 SPRINT
@@ -108,3 +108,20 @@ Robert
 1. Coding Pengamanan File(kemarin)
 2. Membuat Persentasi Pengamanan Pada Registry
 3.
+
+30/5
+Steven:
+1. Fixing some bugs(Kemarin)
+2. Edit presentasi keamanan komputer
+3. Belum translate bahan(untuk branching pada gi 50% dan HBCD 100%)
+
+Alvin
+1. Coding Alur Kerja Branching.jade
+2. Lanjutkan sisa yang belum selesai
+3. Bahasa coding yang tidak terkenal susah untuk dipelajari
+
+Robert
+1. Coding Pengamanan Pada Registry
+2. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
+3. -	
+
