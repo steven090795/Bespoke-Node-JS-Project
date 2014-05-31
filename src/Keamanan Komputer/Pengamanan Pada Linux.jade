@@ -128,9 +128,10 @@ html
         h3 Mengubah kepemilikan group : chgrp (group owner) (nama file)
         h3 Menggunakan account root untuk sementara :
         pre
+        code.language-bash.
           ~$ su            ; system akan meminta password
-          password password : **** ; prompt akan berubah jadi pagar,         
-                  tanda login sebagai root
+          password : **** ; prompt akan berubah jadi pagar,         
+                            tanda login sebagai root
           ~# _                                                     
       section
         h2  Kontrol akses jaringan (Network Access Control)
@@ -192,8 +193,8 @@ html
       section
         h2 Deteksi Penyusupan (Instrusion Detection)
       section
-        h3 Definisi:aktivitas mendeteksi penyusupan secara cepat dengan menggunakan program khusus secara otomatis yang disebut Intrusion Detection System
-        h3 Tipe Dasar IDS
+        h3.bullet Definisi:aktivitas mendeteksi penyusupan secara cepat dengan menggunakan program khusus secara otomatis yang disebut Intrusion Detection System
+        h3.bullet Tipe Dasar IDS
         ol 
           li Ruled based system : mencatat lalu lintas data jika sesuai dengan database dari tanda penyusupan yang telah dikenal, maka langsung dikategorikan penyusupan. Pendekatan Ruled based system :
             ul
@@ -202,7 +203,7 @@ html
           li Adaptive system : penerapan expert system dalam mengamati lalu lintas jaringan.
       section
         h3.bullet Program IDS :
-        ol
+        ul
           li Chkwtmp : program pengecekan terhadap entry kosong
           li Tcplogd : program pendeteksi stealth scan (scanning yang dilakukan tanpa membuat sesi tcp)
           li Host entry : program pendeteksi login anomaly (perilaku aneh)>bizarre behaviour (perilaku aneh), time anomalies (anomaly waktu), local anomaly.

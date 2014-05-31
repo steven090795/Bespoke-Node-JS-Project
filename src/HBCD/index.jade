@@ -109,6 +109,32 @@ html
                 [COMMON]
                 LASTDRIVE=Z
         section
+            p You can add your favorite Programs in the bootcd, all you need to do is Edit autoexec.bat and config.sys and add all the required files in the folder and double click on build-iso and you are ready to burn bootcd.iso
+        section
+            p Example: You want to add Mcafee Antivirus in the bootcd, all you do is create a folder MCAFEE in the folder CD and add a line in config.sys menu
+            pre
+            code.language-ini.
+                menuitem=MCAFEE, McAfee Antivirus
+        section
+            p add two more lines in config.sys
+            pre
+            code.language-ini.
+                [MCAFEE]
+                include=DOS
+        section
+            p and add 4 lines in autoexec.bat
+            pre
+            code.language-ini.
+                :MCAFEE
+                COPY X:\MCAFEE\*.* R:
+                R:\scanpm.exe /adl /all /clean
+                GOTO DOS
+        section
+            p when you start your computer with this bootcd, you will get to menu where you can choose which program you want to run. In this example we will create 50Mb Ram Disk (You will have Minimum of 64Mb Memory)
+            <img src="">
+        section
+            p You can easily create bootable cd, all you have to do is add few lines in autoexec.bat and config.sys and copy files in CD folder and double click on build-iso.cmd and it creates a iso file BootCD.iso
+            p You can add as many items in the list but you are limited to 9 per screen to add more items simply add submenu=MORE, More... (under [MENU] block) and add [MORE] in config.sys and you can add more menuitem there.
                 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')

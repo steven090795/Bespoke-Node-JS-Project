@@ -17,6 +17,9 @@ html
     <option value="" selected="1">Branching Pada Git</option></a>
     <option value="Manajemen Branch.html">Manajemen Branch</option></a>
     <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
+    <option value="Remote Branches.html">Remote Branches</option></a>
+    <option value="Rebasing.html">Rebasing</option></a>
+
     </select>
     </div>
     article
@@ -31,6 +34,7 @@ html
         h3 Untuk memvisualisasikan ini, mari kita asumsikan anda memiliki direktori yang berisi tiga buah berkas, dan anda menambahkan mereka ke stage dan melakukan commit. Proses staging berkas melakukan checksum (dengan hash SHA-1), menyimpan versi berkas tersebut dalam repositori Git (Git merujuknya sebagai 'blobs'), dan menambahkan checksum tersebut ke staging area:
       section
         pre 
+        code.language-bash.
           $ git add README test.rb LICENSE
           $ git commit -m 'initial commit of my project'
       section
@@ -65,6 +69,7 @@ html
         h2 Apa pentingnya itu?
         h3 Baiklah, mari kita lakukan commit lain:
         pre
+        code.language-bash.
           $ vim test.rb
           $ git commit -a -m 'made a change'
       section
@@ -80,6 +85,7 @@ html
       section
         h3.bullet Mari buat sedikit perubahan dan lakukan commit lagi:
         pre.bullet
+        code.language-bash.
           $ vim test.rb
           $ git commit -a -m 'made other changes'
       section
