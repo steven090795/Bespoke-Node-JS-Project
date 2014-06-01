@@ -140,3 +140,20 @@ Robert
 1. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
 2. Debug Presentasi
 3. -	
+
+
+1/6
+Steven:
+1. Fixing bugs
+2. Adding image ke presentasi
+3. 
+
+Alvin
+1. Coding Alur Kerja Branching
+2. Tambah resource gambar untuk branching
+3. 
+
+Robert
+1. Debug Presentasi
+2. Manage Image
+3. -
