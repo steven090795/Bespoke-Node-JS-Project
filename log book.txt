@@ -157,3 +157,20 @@ Robert
 1. Debug Presentasi
 2. Manage Image
 3. -
+
+2/6
+Robert
+1. Manage Image
+2. Coding untuk insert image ke presentasi Branching Pada git
+3. -
+
+Steven:
+1. Adding Image
+2. Adding image ke presentasi Keamanan Komputer
+3. 
+
+Alvin
+1. Tambah Resource Gambar
+2. Insert Image to Remote Branches.jade
+3. 
+
