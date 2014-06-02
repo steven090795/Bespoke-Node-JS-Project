@@ -32,21 +32,13 @@ html
         h2 The Basic Rebase
       section
         p If you go back to an earlier example from the Merge section (see Figure 3-27), you can see that you diverged your work and made commits on two different branches.
-<<<<<<< HEAD
-        <img src="image/Figure 3-27. Your initial diverged commit history.png">
-        p Figure 3-27. Your initial diverged commit history.
       section
-        p The easiest way to integrate the branches, as we’ve already covered, is the merge command. It performs a three-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit), as shown in Figure 3-28.
-        <img src="image/Figure 3-28. Merging a branch to integrate the diverged work history.png">
-        p Figure 3-28. Merging a branch to integrate the diverged work history.
-=======
         img(src="image/6.png")
         p Your initial diverged commit history.
       section
         p The easiest way to integrate the branches, as we’ve already covered, is the merge command. It performs a three-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit), as shown in Figure 3-28.
         img(src="image/7.png")
         p Merging a branch to integrate the diverged work history.
->>>>>>> 15512b5bf9787c80c2f04286537a329d8242d186
       section
         p However, there is another way: you can take the patch of the change that was introduced in C3 and reapply it on top of C4. In Git, this is called rebasing. With the rebase command, you can take all the changes that were committed on one branch and replay them on another one.
         p In this example, you’d run the following:
@@ -56,15 +48,6 @@ html
         p First, rewinding head to replay your work on top of it...
         p Applying: added staged command
       section
-<<<<<<< HEAD
-        p It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn. Figure 3-29 illustrates this process.
-        <img src="image/Figure 3-29. Rebasing the change introduced in C3 onto C4.png">
-        p Figure 3-29. Rebasing the change introduced in C3 onto C4.
-      section
-        p At this point, you can go back to the master branch and do a fast-forward merge (see Figure 3-30).
-        <img src="image/Figure 3-30. Fast-forwarding the master branch.png">
-        p Figure 3-30. Fast-forwarding the master branch.
-=======
         p It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn.
         img(src="image/8.png")
         p Rebasing the change introduced in C3 onto C4.
@@ -72,7 +55,6 @@ html
         p At this point, you can go back to the master branch and do a fast-forward merge (see Figure 3-30).
         img(src="image/9.png")
         p Fast-forwarding the master branch.
->>>>>>> 15512b5bf9787c80c2f04286537a329d8242d186
       section
         p Now, the snapshot pointed to by C3' is exactly the same as the one that was pointed to by C5 in the merge example. There is no difference in the end product of the integration, but rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
       section
@@ -84,14 +66,8 @@ html
       section
         p You can also have your rebase replay on something other than the rebase branch. Take a history like Figure 3-31, for example. You branched a topic branch (server) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes (client) and committed a few times. Finally, you went back to your server branch and did a few more commits.
       section
-<<<<<<< HEAD
-        <img src="image/Figure 3-31. A history with a topic branch off another topic branch.png">
-        p Figure 3-31. A history with a topic branch off another topic branch.
-=======
         img(src="image/10.png")
         p A history with a topic branch off another topic branch.
->>>>>>> 15512b5bf9787c80c2f04286537a329d8242d186
-
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
