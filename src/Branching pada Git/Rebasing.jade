@@ -32,12 +32,12 @@ html
         h2 The Basic Rebase
       section
         p If you go back to an earlier example from the Merge section (see Figure 3-27), you can see that you diverged your work and made commits on two different branches.
-        <img src="">
-        p Figure 3-27. Your initial diverged commit history.
+        img(src="image/6.png")
+        p Your initial diverged commit history.
       section
         p The easiest way to integrate the branches, as we’ve already covered, is the merge command. It performs a three-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit), as shown in Figure 3-28.
-        <img src="">
-        p Figure 3-28. Merging a branch to integrate the diverged work history.
+        img(src="image/7.png")
+        p Merging a branch to integrate the diverged work history.
       section
         p However, there is another way: you can take the patch of the change that was introduced in C3 and reapply it on top of C4. In Git, this is called rebasing. With the rebase command, you can take all the changes that were committed on one branch and replay them on another one.
         p In this example, you’d run the following:
