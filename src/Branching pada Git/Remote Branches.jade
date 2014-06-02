@@ -30,30 +30,30 @@ html
         h3 Remote Branches
         p Remote branches are references to the state of branches on your remote repositories. They’re local branches that you can’t move; they’re moved automatically whenever you do any network communication. Remote branches act as bookmarks to remind you where the branches on your remote repositories were the last time you connected to them.
       section
-        p This may be a bit confusing, so let’s look at an example. Let’s say you have a Git server on your network at git.ourcompany.com. If you clone from this, Git automatically names it origin for you, pulls down all its data, creates a pointer to where its master branch is, and names it origin/master locally; and you can’t move it. Git also gives you your own master branch starting at the same place as origin’s master branch, so you have something to work from (see Figure 3-22).
+        p This may be a bit confusing, so let’s look at an example. Let’s say you have a Git server on your network at git.ourcompany.com. If you clone from this, Git automatically names it origin for you, pulls down all its data, creates a pointer to where its master branch is, and names it origin/master locally; and you can’t move it. Git also gives you your own master branch starting at the same place as origin’s master branch, so you have something to work from.
       section
-        <img src="">
-        p Figure 3-22. A Git clone gives you your own master branch and origin/master pointing to origin’s master branch.
+        img(src="image/1.png")
+        p A Git clone gives you your own master branch and origin/master pointing to origin’s master branch.
       section
-        p If you do some work on your local master branch, and, in the meantime, someone else pushes to <strong>git.ourcompany.com</strong> and updates its master branch, then your histories move forward differently. Also, as long as you stay out of contact with your origin server, your <strong>origin/master</strong> pointer doesn’t move (see Figure 3-23).
+        p If you do some work on your local master branch, and, in the meantime, someone else pushes to <strong>git.ourcompany.com</strong> and updates its master branch, then your histories move forward differently. Also, as long as you stay out of contact with your origin server, your <strong>origin/master</strong> pointer doesn’t move.
       section
-        <img src="">
+        img(src="image/2.png")
         p Figure 3-23. Working locally and having someone push to your remote server makes each history move forward differently.
       section
-        p To synchronize your work, you run a <strong>git fetch origin</strong> command. This command looks up which server origin is (in this case, it’s git.ourcompany.com), fetches any data from it that you don’t yet have, and updates your local database, moving your origin/master pointer to its new, more up-to-date position (see Figure 3-24).
+        p To synchronize your work, you run a <strong>git fetch origin</strong> command. This command looks up which server origin is (in this case, it’s git.ourcompany.com), fetches any data from it that you don’t yet have, and updates your local database, moving your origin/master pointer to its new, more up-to-date position.
       section
-        <img src="">
-        p Figure 3-24. The git fetch command updates your remote references.
+        img(src="image/3.png")
+        p The git fetch command updates your remote references.
       section
-        p To demonstrate having multiple remote servers and what remote branches for those remote projects look like, let’s assume you have another internal Git server that is used only for development by one of your sprint teams. This server is at <strong>git.team1.ourcompany.com</strong>. You can add it as a new remote reference to the project you’re currently working on by running the <strong>git remote add</strong> command. Name this remote <strong>teamone</strong>, which will be your shortname for that whole URL (see Figure 3-25).
+        p To demonstrate having multiple remote servers and what remote branches for those remote projects look like, let’s assume you have another internal Git server that is used only for development by one of your sprint teams. This server is at <strong>git.team1.ourcompany.com</strong>. You can add it as a new remote reference to the project you’re currently working on by running the <strong>git remote add</strong> command. Name this remote <strong>teamone</strong>, which will be your shortname for that whole URL.
       section
-        <img src="">
-        p Figure 3-25. Adding another server as a remote.
+        img(src="image/4.png")
+        p Adding another server as a remote.
       section
         p Now, you can run <strong>git fetch teamone</strong> to fetch everything the remote <strong>teamone</strong> server has that you don’t have yet. Because that server is a subset of the data your origin server has right now, Git fetches no data but sets a remote branch called <strong>teamone/master</strong> to point to the commit that <strong>teamone</strong> has as its <strong>master</strong> branch (see Figure 3-26).
       section
-        <img src="">
-        p Figure 3-26. You get a reference to teamone’s master branch position locally.
+        img(src="image/5.png")
+        p You get a reference to teamone’s master branch position locally.
       section
         h3 Pushing
         p When you want to share a branch with the world, you need to push it up to a remote that you have write access to. Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share. That way, you can use private branches for work you don’t want to share, and push up only the topic branches you want to collaborate on.

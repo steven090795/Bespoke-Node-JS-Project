@@ -47,13 +47,13 @@ html
         p First, rewinding head to replay your work on top of it...
         p Applying: added staged command
       section
-        p It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn. Figure 3-29 illustrates this process.
-        <img src="">
-        p Figure 3-29. Rebasing the change introduced in C3 onto C4.
+        p It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn.
+        img(src="image/8.png")
+        p Rebasing the change introduced in C3 onto C4.
       section
         p At this point, you can go back to the master branch and do a fast-forward merge (see Figure 3-30).
-        <img src="">
-        p Figure 3-30. Fast-forwarding the master branch.
+        img(src="image/9.png")
+        p Fast-forwarding the master branch.
       section
         p Now, the snapshot pointed to by C3' is exactly the same as the one that was pointed to by C5 in the merge example. There is no difference in the end product of the integration, but rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
       section
@@ -64,8 +64,9 @@ html
         h2 More Interesting Rebase
       section
         p You can also have your rebase replay on something other than the rebase branch. Take a history like Figure 3-31, for example. You branched a topic branch (server) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes (client) and committed a few times. Finally, you went back to your server branch and did a few more commits.
-        <img src="">
-        p Figure 3-31. A history with a topic branch off another topic branch.
+      section
+        img(src="image/10.png")
+        p A history with a topic branch off another topic branch.
 
 
     // build:js scripts/scripts.js
