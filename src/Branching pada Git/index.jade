@@ -42,6 +42,8 @@ html
       section
         h3 Sebuah branch di Git secara sederhana hanyalah pointer yang dapat bergerak ke salah satu commit. Nama default dari branch dalam Git adalah master. Ketika anda membuat commit di awal, anda diberikan sebuah branch master yang menunjuk ke commit terakhir yang anda buat. Setiap kali anda melakukan commit, ia bergerak maju secara otomatis.
       section
+        image(src="image/21.png")
+      section
         h2 Apa yang terjadi jika anda membuat branch baru?
       section
         h3.bullet Nah, melakukan hal tersebut menciptakan sebuah pointer baru untuk bergerak. Katakanlah anda membuat branch baru yang bernama <strong>testing</strong>. Anda melakukan ini dengan perintah <strong>git branch</strong>:
@@ -49,13 +51,13 @@ html
           $ git branch testing
         h3.bullet Hal ini menciptakan sebuah pointer (penunjuk) baru pada commit yang sama dengan yang saat ini anda berada 
       section
-        image image
+        image(src="image/22.png")
       section
         h2 Bagaimana Git tahu di branch mana anda berada saat ini?
       section
         h3 Git menyimpan sebuah pointer khusus yang disebut HEAD. Perhatikan bahwa ini adalah jauh berbeda dari konsep HEAD di VCS lain yang mungkin pernah anda gunakan, seperti Subversion atau CVS. Dalam Git, HEAD ini adalah pointer ke branch lokal anda saat ini. Dalam kasus ini, anda masih berada di master. Perintah git branch hanya menciptakan sebuah branch baru — namun tidak dengan serta-merta beralih ke branch itu
       section
-        image image
+        image(src="image/23.png")
       section
         h2 Bagaimana cara untuk memindahkan HEAD pada branch testing?
       section
@@ -64,7 +66,7 @@ html
           $ git checkout testing
         h3.bullet maka HEAD menunjuk ke branch testing
       section
-        image image
+        image(src="image/24.png")
       section
         h2 Apa pentingnya itu?
         h3 Baiklah, mari kita lakukan commit lain:
@@ -73,13 +75,13 @@ html
           $ vim test.rb
           $ git commit -a -m 'made a change'
       section
-          image image
+          image(src="image/25.png")
       section
         h3.bullet Hal ini menarik, karena sekarang branch testing anda telah bergerak maju, tetapi cabang master anda masih menunjuk ke commit dimana disitu anda menjalankan <strong>git checkout</strong> untuk beralih branch. Mari kita beralih kembali ke branch master:
         pre.bullet
           $ git checkout master
       section
-        image image
+        image(src="image/26.png")
       section
         h3 Perintah tersebut melakukan dua hal. Ia memindahkan pointer HEAD kembali menunjuk ke branch master, dan ia mengembalikan berkas-berkas dalam direktori kerja anda kembali ke snapshot yang ditunjuk oleh master. Ini juga berarti perubahan yang anda lakukan dari titik ini ke depan akan berubah arah dari versi lama dari proyek. Hal ini pada dasarnya melakukan pemutaran balik pekerjaan yang anda lakukan dalam branch testing anda untuk sementara sehingga anda dapat pergi ke arah yang berbeda.
       section
@@ -89,7 +91,7 @@ html
           $ vim test.rb
           $ git commit -a -m 'made other changes'
       section
-        image image
+        image(src="image/27.png")
       section
         h3 Sekarang histori proyek anda telah berubah arah. Anda membuat dan beralih ke suatu branch, melakukan beberapa pekerjaan di atasnya, dan kemudian beralih kembali ke branch utama anda dan melakukan pekerjaan lain. Kedua perubahan itu terisolasi dalam branch terpisah: anda dapat beralih antara branch dan menggabungkan (merge) mereka bersama-sama ketika anda siap. Dan anda melakukan semua itu dengan perintah branch dan checkout yang sederhana
     // build:js scripts/scripts.js
