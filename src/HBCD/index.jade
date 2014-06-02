@@ -3,7 +3,7 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     title Hiren's Bootable CD
-
+    
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
     link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
@@ -131,7 +131,16 @@ html
                 GOTO DOS
         section
             p when you start your computer with this bootcd, you will get to menu where you can choose which program you want to run. In this example we will create 50Mb Ram Disk (You will have Minimum of 64Mb Memory)
-            <img src="">
+        section
+                h4 Microsoft Windows Startup Menu
+                ‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗
+                p 1. Dos
+                p 2. TestDisk
+                p 3. Ghost
+                p 4. Ntfs
+                p 5. Partition Manager
+                p 6. McAfee Antivirus
+                p Enter a choice : 1
         section
             p You can easily create bootable cd, all you have to do is add few lines in autoexec.bat and config.sys and copy files in CD folder and double click on build-iso.cmd and it creates a iso file BootCD.iso
             p You can add as many items in the list but you are limited to 9 per screen to add more items simply add submenu=MORE, More... (under [MENU] block) and add [MORE] in config.sys and you can add more menuitem there.
