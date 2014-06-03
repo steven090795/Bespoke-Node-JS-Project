@@ -174,3 +174,36 @@ Alvin
 2. Insert Image to Remote Branches.jade
 3. 
 
+3/6
+Alvin
+1. Adding Image in Remote Branches.jade
+2. Try to edit style in HBCD presentation
+3. Accidently commit and push to github with error date and time (Date Time Bugs)
+
+Robert
+1. Insert Image to Rebasing.jade
+2. Coding Lompat Slide Index.jade
+3.
+
+Steven
+1. Adding image to slide
+2. testing add jump slide
+3. jump slide bugs
+
+4/6
+Alvin
+1.
+2.
+3.
+
+Robert
+1.
+2.
+3.
+
+Steven
+1.
+2.
+3.
+
+
