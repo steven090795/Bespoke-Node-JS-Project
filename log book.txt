@@ -196,18 +196,17 @@ Steven
 
 4/6
 Alvin
-1.
-2.
-3.
+1. Edit style HBCD presentation
+2. Continue Edit style HBCD presentation
+3. -
 
 Robert
-1.
-2.
-3.
+1. Coding lompat slide index.jade
+2. Edit style
+3. -
 
 Steven
-1.
-2.
-3.
-
+1. 
+2. 
+3. 
 
