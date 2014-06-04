@@ -110,6 +110,11 @@ Robert
 3.
 
 30/5
+Robert
+1. Coding Pengamanan Pada Registry
+2. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
+3. -	
+
 Steven:
 1. Fixing some bugs(Kemarin)
 2. Edit presentasi keamanan komputer
@@ -120,12 +125,13 @@ Alvin
 2. Lanjutkan sisa yang belum selesai
 3. Bahasa coding yang tidak terkenal susah untuk dipelajari
 
-Robert
-1. Coding Pengamanan Pada Registry
-2. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
-3. -	
+
 
 31/5
+Robert
+1. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
+2. Debug Presentasi
+3. -	
 Steven:
 1. Edit Beberapa ke Pre
 2. Hari ini Debug Presentasi
@@ -136,13 +142,14 @@ Alvin
 2. Coding Rebasing.jade
 3. 
 
-Robert
-1. Coding Final Pengamanan Pada Registry dan Finalisasi lainnya
-2. Debug Presentasi
-3. -	
 
 
 1/6
+Robert
+1. Debug Presentasi
+2. Manage Image
+3. -
+
 Steven:
 1. Fixing bugs
 2. Adding image ke presentasi
@@ -153,10 +160,7 @@ Alvin
 2. Tambah resource gambar untuk branching
 3. 
 
-Robert
-1. Debug Presentasi
-2. Manage Image
-3. -
+
 
 2/6
 Robert
