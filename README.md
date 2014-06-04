@@ -19,3 +19,6 @@ Orange Team
 
 ### 29/5/2014
  - Persentasi Basis text harus Siap	
+
+### 4/6/214
+ - Test git that has been fix from date bugs
