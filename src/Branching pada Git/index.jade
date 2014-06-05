@@ -13,26 +13,25 @@ html
 
   body
     <div class="header">
-    <div class="pilih_presentasi">
-    p Pilih Persentasi:  
-    </div>
-    <div class="style-select"><select onchange="location.href=this.options[this.selectedIndex].value">
-
-    <option value="index.html">Home</option></a>
-    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
-    <option value="Manajemen Branch.html" selected="1">Manajemen Branch</option></a>
-    <option value="Remote Branches.html">Remote Branches</option></a>
-    <option value="Rebasing.html">Rebasing</option></a>
-    </select>
-    </div>
-
+      <div class="pilih_presentasi">
+        p Pilih:  
+      </div>
+      <div class="style-select">
+        <select onchange="location.href=this.options[this.selectedIndex].value">
+          <option value="index.html">Home</option></a>
+          <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
+          <option value="Manajemen Branch.html">Manajemen Branch</option></a>
+          <option value="Remote Branches.html">Remote Branches</option></a>
+          <option value="Rebasing.html">Rebasing</option></a>
+        </select>
+      </div>
     </div>
     article
       section
         h1 Branching Pada Git
-        h2 Orange Team
+        h2 
       section
-        h2 Apakah itu Branch?
+        h2
       section
         h3 Ketika anda melakukan commit dalam Git, Git menyimpan sebuah object commit yang berisi pointer ke snapshot dari konten yang anda staged, metadata pembuat (author) dan pesan (message), dan nol atau lebih pointer ke commit yang merupakan parent (induk) langsung dari commit ini: nol jika ini commit yang pertama, satu jika ini commit yang normal, dan beberapa jika ini commit yang dihasilkan dari gabungan antara dua atau lebih branch.
       section
