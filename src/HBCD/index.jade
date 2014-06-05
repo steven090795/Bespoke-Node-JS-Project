@@ -6,8 +6,10 @@ html
     
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
-    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
-    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    //link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main2.css')
+    link(rel='stylesheet', type='text/css', href='styles/themes.css')
+    //link(rel='stylesheet', type='text/css', href='styles/main.css')
     // endbuild
 
   body
@@ -17,9 +19,7 @@ html
     </div>
     <div class="style-select"><select onchange="location.href=this.options[this.selectedIndex].value">
 
-    <option value="index.html">First</option></a>
-    <option value="index2.html">Second</option></a>
-    <option value="index3.html" selected="1">Third</option></a>
+    <option value="index.html" selected="1">Hiren's Bootable CD</option></a>
     </select>
     </div>
 
@@ -163,5 +163,7 @@ html
     script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
     script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
     script(src='bower_components/prism/prism.js')
-    script(src='scripts/main.js')
+    
+    script(src="scripts/demo.js")
+    script(src="scripts/bespoke.js")
     // endbuild
