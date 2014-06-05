@@ -206,7 +206,22 @@ Robert
 3. -
 
 Steven
-1. 
-2. 
+1. testing add jump slide
+2. fix git date time bugs
 3. 
 
+5/6
+Alvin
+1. Edit styles HBCD presentation
+2. continue edit styles HBCD presentation
+3. 
+
+Robert
+1. edit style
+2. edit index.jade
+3.
+
+Steven
+1.
+2.
+3.
