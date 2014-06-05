@@ -10,7 +10,6 @@ html
     link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
     link(rel='stylesheet', type='text/css', href='styles/main.css')
     // endbuild
-
   body
     <div class="header">
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
@@ -19,10 +18,9 @@ html
     <option value="Pengamanan Pada Windows.html">Pengamanan Pada Windows</option></a>
     <option value="" selected="1">Pengamanan Pada File</option></a>
     <option value="Pengamanan Pada Registry.html">Pengamanan Pada Registry</option></a>
-    </select>
-    </select>
-    <select onchange="location.href=this.options[this.selectedIndex].value">
-    <option value="#1">Slide 1</option></a>
+    </select>    
+    <select id="menu1" name="menu1">
+    <option value="#1" selected="selected">Slide 1</option></a> 
     <option value="#2">Slide 2</option></a>
     <option value="#3">Slide 3</option></a>
     <option value="#4">Slide 4</option></a>
@@ -114,4 +112,5 @@ html
     script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
     script(src='bower_components/prism/prism.js')
     script(src='scripts/main.js')
+    script(src='scripts/Untitled-1.js')
     // endbuild
