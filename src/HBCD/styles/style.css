@@ -173,12 +173,13 @@ header p
 header p.visible 
 	opacity: 1;
 
-@media 
-	-webkit-min-device-pixel-ratio: 2
-	min-resolution: 192dpi
 
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi)
 h1 
 	text-shadow: none;
+
 	
 
 

@@ -1,169 +1,64 @@
+doctype html
 html
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Hiren's Bootable CD
-    
-    // build:css styles/styles.css
-    //- Check out 'src/bower_components/prism/themes/' for available themes
-    //link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
-    link(rel='stylesheet', type='text/css', href='styles/main2.css')
-    link(rel='stylesheet', type='text/css', href='styles/themes.css')
-    //link(rel='stylesheet', type='text/css', href='styles/main.css')
-    // endbuild
+	head
+		meta(name='viewport', content='width=device-width')
+		title Hiren's Bootable CD
+		link(rel='stylesheet', type='text/css', href='styles/style.css')
+		link(rel='stylesheet', type='text/css', href='styles/themes.css')
+		link(ref='http://fonts.googleapis.com/css?family=Raleway+Dots', rel='stylesheet', type='text/css')
 
-  body
-    <div class="header">
-    <div class="pilih_presentasi">
-    p Pilih Persentasi:  
-    </div>
-    <div class="style-select"><select onchange="location.href=this.options[this.selectedIndex].value">
+	body.coverflow
+		div#main
+			header
+			<a href="https://github.com/markdalgleish/bespoke.js">
+			h1 Bespoke.js
+			h2 DIY Presentation Micro-Framework
+			</a>
+			p.hidden span#input-method Press up and down keys to view example themes.
 
-    <option value="index.html" selected="1">Hiren's Bootable CD</option></a>
-    </select>
-    </div>
+			article
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
+				section
 
-    </div>
-    article
-        section
-            h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
-            h2 Orange Team
-        section
-            h2.bullet Tools Used
-            ul
-                li bfi.exe (Build Floppy Image - to create bootable image from files)
-                li mkisofs.exe (a tool to create/build the CDRom ISO image file)
-                li build-iso.cmd (batch file to create floppy and iso image)
-        section
-            h2.bullet We will need some files from Windows ME or Windows XP startup disk
-            ul
-                li io.sys (Dos Input Output System file)
-                li msdos.sys (Dos system file)
-                li command.com (MS-Dos mode command line interpreter)
-                li himem.sys (An extended memory manager that is included with DOS and Windows)
-                li mscdex.exe (Microsoft CD-Rom Extension)
-                li oakcdrom.sys (Generic CD-Rom driver, work with the most of all IDE CD-ROM drives)
-                li xmsdsk.exe (Adjustable XMS RAMdisk Driver - Freeware)
-                li ctmouse.exe (Mouse Driver For Dos - also works on USB Mouse - Freeware) or mouse.com
-        section
-            <a href="http://www.hiren.info/download/freeware-tools/bootcd.zip">All the necessary files are included in bootcd.zip Download (468KB)</a>
-        section
-            p AUTOEXEC.BAT
-            pre
-            code.language-bat.
-                @ECHO OFF
-                MSCDEX.EXE /D:CDDRIVER /L:X
-                XMSDSK.EXE 51200 R: /t /y
-                CTMOUSE.EXE
-                PATH=A:\;R:\
-                GOTO %CONFIG%
 
-                :TESTDISK
-                COPY X:\TESTDISK\*.* R:
-                R:\TESTDISK.EXE
-                GOTO DOS
-        section
-            pre
-            code.language-ini.
-                :GHOST
-                COPY X:\GHOST\GHOST.EXE R:
-                R:\GHOST.EXE
-                GOTO DOS
+		div#forkme
+			<a href="https://github.com/markdalgleish/bespoke.js">Fork me on GitHub</a>
 
-                :NTFS
-                COPY X:\NTFS\*.* R:
-                R:\NTFS4DOS.EXE
-                GOTO DOS
+		footer
+			div.credits
+				<a href="http://twitter.com/markdalgleish"><img src="profile.jpg" alt="Mark Dalgleish"></a>
+				p Lovingly crafted by <a href="http://twitter.com/markdalgleish">@markdalgleish</a>
 
-                :RPM
-                COPY X:\RPM\*.* R:
-                R:\RPM.EXE
-                GOTO DOS
-        section
-            pre
-            code.language-ini.
-                :DOS
-                ECHO  X: CD DRIVE
-                ECHO  R: RAM DRIVE
-        section
-            p CONFIG.SYS
-            pre
-            code.language-ini.
-                [MENU]
-                menuitem=DOS, Dos
-                menuitem=TESTDISK, TestDisk
-                menuitem=GHOST, Ghost
-                menuitem=NTFS, Ntfs
-                menuitem=RPM, Partition Manager
+			div.themes
+				p
+					<strong>Example Theme
+					span.colon : 
+				div#up-arrow.up.arrow ^
+				div#down-arrow.down.arrow ^
 
-                [DOS]
-                DEVICE=OAKCDROM.SYS /D:CDDRIVER /L:X
-
-                [TESTDISK]
-                include=DOS
-        section
-            pre
-            code.language-ini.
-                [GHOST]
-                include=DOS
-
-                [NTFS]
-                include=DOS
-
-                [RPM]
-                include=DOS
-
-                [COMMON]
-                LASTDRIVE=Z
-        section
-            p You can add your favorite Programs in the bootcd, all you need to do is Edit autoexec.bat and config.sys and add all the required files in the folder and double click on build-iso and you are ready to burn bootcd.iso
-        section
-            p Example: You want to add Mcafee Antivirus in the bootcd, all you do is create a folder MCAFEE in the folder CD and add a line in config.sys menu
-            pre
-            code.language-ini.
-                menuitem=MCAFEE, McAfee Antivirus
-        section
-            p add two more lines in config.sys
-            pre
-            code.language-ini.
-                [MCAFEE]
-                include=DOS
-        section
-            p and add 4 lines in autoexec.bat
-            pre
-            code.language-ini.
-                :MCAFEE
-                COPY X:\MCAFEE\*.* R:
-                R:\scanpm.exe /adl /all /clean
-                GOTO DOS
-        section
-            p when you start your computer with this bootcd, you will get to menu where you can choose which program you want to run. In this example we will create 50Mb Ram Disk (You will have Minimum of 64Mb Memory)
-        section
-                h4 Microsoft Windows Startup Menu
-                ‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗‗
-                p 1. Dos
-                p 2. TestDisk
-                p 3. Ghost
-                p 4. Ntfs
-                p 5. Partition Manager
-                p 6. McAfee Antivirus
-                p Enter a choice : 1
-        section
-            p You can easily create bootable cd, all you have to do is add few lines in autoexec.bat and config.sys and copy files in CD folder and double click on build-iso.cmd and it creates a iso file BootCD.iso
-            p You can add as many items in the list but you are limited to 9 per screen to add more items simply add submenu=MORE, More... (under [MENU] block) and add [MORE] in config.sys and you can add more menuitem there.
-                
-    // build:js scripts/scripts.js
-    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
-    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
-    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
-    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
-    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
-    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
-    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
-    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
-    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
-    script(src='bower_components/prism/prism.js')
-    
-    script(src="scripts/demo.js")
-    script(src="scripts/bespoke.js")
-    // endbuild
+			script(src='bower_components/bespoke.js/demo/demo.js')
+			script(src='bower_components/bespoke.js/src/bespoke.js')
