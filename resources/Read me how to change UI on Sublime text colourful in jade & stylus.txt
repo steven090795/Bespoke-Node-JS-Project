@@ -1,0 +1,1 @@
+copy paste all the file in sublime Text folder to %appdata%/Sublime Text 2 or %appdata%/Sublime Text 3
