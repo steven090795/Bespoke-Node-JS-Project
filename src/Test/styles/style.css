@@ -1,19 +1,19 @@
-* 
+* {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	margin: 0;
 	padding: 0;
+}
 
-
-body 
+body {
 	overflow-x: hidden;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	color: #606060;
+}
 
-
-a 
+a {
 	-webkit-transition: color 1s ease;
 	-moz-transition: color 1s ease;
 	-ms-transition: color 1s ease;
@@ -21,47 +21,47 @@ a
 	transition: color 1s ease;
 	color: #a0a0a0;
 	text-decoration: none;
+}
 
-
-footer 
+footer {
 	background: white;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	height: 60px;
+}
 
-
-footer img 
+footer img {
 	border: 0;
 	border-radius: 4px;
 	float: left;
 	width: 30px;
 	height: 30px;
 	margin: 15px;
+}
 
-
-footer p 
+footer p {
 	padding-top: 24px;
+}
 
-
-footer a 
+footer a {
 	font-weight: bold;
+}
 
-
-.themes 
+.themes {
 	width: 180px;
 	position: absolute;
 	left: 50%;
 	top: 0;
 	margin-left: -55px;
+}
 
-
-.themes strong 
+.themes strong {
 	margin-right: 4px;
+}
 
-
-.arrow 
+.arrow {
 	-webkit-transition: background .1s ease;
 	-moz-transition: background .1s ease;
 	-ms-transition: background .1s ease;
@@ -79,30 +79,30 @@ footer a
 	overflow: hidden;
 	position: absolute;
 	top: 24px;
+}
 
-
-.arrow.up 
+.arrow.up {
 	left: -42px;
+}
 
-
-.arrow.down 
+.arrow.down {
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
 	left: -24px;
+}
 
-
-#main 
+#main {
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
 
-
-h1 
+h1 {
 	color: white;
 	font-family: Raleway Dots;
 
@@ -127,9 +127,9 @@ h1
 	width: 776px;
 	left: 50%;
 	margin-left: -388px;
+}
 
-
-h2 
+h2 {
 	-webkit-transition: opacity 2s ease;
 	-moz-transition: opacity 2s ease;
 	-ms-transition: opacity 2s ease;
@@ -147,9 +147,9 @@ h2
 	font-weight: 200;
 	color: white;
 	opacity: 0.9;
+}
 
-
-header p 
+header p {
 	-webkit-transition: opacity .5s ease;
 	-moz-transition: opacity .5s ease;
 	-ms-transition: opacity .5s ease;
@@ -168,22 +168,21 @@ header p
 	background: #808080;
 	font-size: 12px;
 	opacity: 0;
+}
 
-
-header p.visible 
+header p.visible {
 	opacity: 1;
+}
 
-
-@media
+@media 
 (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi)
-h1 
-	text-shadow: none;
+(min-resolution: 192dpi) {
+	h1 {
+		text-shadow: none;
+	}
+}
 
-	
-
-
-#forkme 
+#forkme {
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -196,9 +195,9 @@ h1
 	width: 240px;
 	right: -60px;
 	top: 46px;
+}
 
-
-#forkme a 
+#forkme a {
 	color: #404040;
 	display: block;
 	font: 13px Helvetica Neue, Arial, sans-serif;
@@ -206,9 +205,9 @@ h1
 	padding: 0.6em;
 	text-align: center;
 	text-decoration: none;
+}
 
-
-article 
+article {
 	-webkit-perspective: 600px;
 	-moz-perspective: 600px;
 	-ms-perspective: 600px;
@@ -219,9 +218,9 @@ article
 	right: 0;
 	left: 0;
 	bottom: 0;
+}
 
-
-section 
+section {
 	-webkit-transform: none;
 	-moz-transform: none;
 	-ms-transform: none;
@@ -237,157 +236,158 @@ section
 	margin-left: -256px;
 	margin-top: -220px;
 	opacity: 0;
-
+}
 body,
-section.bespoke-slide 
+section.bespoke-slide {
 	-webkit-transition: -webkit-transform .7s ease, opacity .7s ease, background-color .7s ease;
 	-moz-transition: -moz-transform .7s ease, opacity .7s ease, background-color .7s ease;
 	-ms-transition: -ms-transform .7s ease, opacity .7s ease, background-color .7s ease;
 	-o-transition: -o-transform .7s ease, opacity .7s ease, background-color .7s ease;
 	transition: transform .7s ease, opacity .7s ease, background-color .7s ease;
-
-section.bespoke-active 
+}
+section.bespoke-active {
 	opacity: 1;
 	z-index: 1;
-
-section.bespoke-inactive 
+}
+section.bespoke-inactive {
 	pointer-events: none;
 	z-index: 0;
+}
 
-
-@media only screen and (max-width: 768px) 
-	body 
+@media only screen and (max-width: 768px) {
+	body {
 		font-size: 10px;
-	
+	}
 
-	h1 
+	h1 {
 		margin-top: -95px;
-	
+	}
 
-	h2 
+	h2 {
 		font-size: 14px;
 		margin-top: 22px;
-	
+	}
 
-	header p 
+	header p {
 		font-size: 10px;
 		bottom: 40px;
 		padding: 6px 12px;
-	
+	}
 
-	footer 
+	footer {
 		height: 50px;
-	
+	}
 
-	footer img 
+	footer img {
 		height: 30px;
 		width: 30px;
 		margin: 10px;
-	
+	}
 
-	footer p 
+	footer p {
 		padding-top: 19px;
-	
+	}
 
-	.arrow 
+	.arrow {
 		top: 18px;
-	
+	}
 
-	#forkme a 
+	#forkme a {
 		font-size: 11px;
 		padding: 0.7em;
-	
+	}
 
-	section 
+	section {
 		margin-top: -216px;
-	
+	}
 
 	a,
-	.arrow 
+	.arrow {
 		-webkit-transform: none;
 		-moz-transform: none;
 		-ms-transform: none;
 		-o-transform: none;
 		transform: none;
-	
+	}
 
 	body,
-	section.bespoke-slide 
+	section.bespoke-slide {
 		-webkit-transition: -webkit-transform .7s ease, opacity .7s ease;
 		-moz-transition: -moz-transform .7s ease, opacity .7s ease;
 		-ms-transition: -ms-transform .7s ease, opacity .7s ease;
 		-o-transition: -o-transform .7s ease, opacity .7s ease;
 		transition: transform .7s ease, opacity .7s ease;
-	
+	}
+}
 
 
+@media only screen and (max-width: 640px) {
 
-@media only screen and (max-width: 640px) 
-
-	footer .credits p 
+	footer .credits p {
 		position: relative;
 		top: -6px;
 		width: 160px;
-	
+	}
 
+}
 
+@media only screen and (max-width: 570px) {
 
-@media only screen and (max-width: 570px) 
-
-	#forkme 
+	#forkme {
 		right: -78px;
 		top: 32px;
-	
+	}
 
-	#forkme a 
+	#forkme a {
 		font-size: 9px;
-	
+	}
 
-	h1 
+	h1 {
 		-webkit-transform: scale(0.27);
 		-moz-transform: scale(0.27);
 		-ms-transform: scale(0.27);
 		-o-transform: scale(0.27);
 		transform: scale(0.27);
 		margin-top: -94px;
-	
+	}
 
-	h2 
+	h2 {
 		font-size: 12px;
 		margin-top: -7px;
-	
+	}
 
-	article 
+	article {
 		-webkit-transform: scale(0.5) translateY(-27px);
 		-moz-transform: scale(0.5) translateY(-27px);
 		-ms-transform: scale(0.5) translateY(-27px);
 		-o-transform: scale(0.5) translateY(-27px);
 		transform: scale(0.5) translateY(-27px);
-	
+	}
 
-	.themes 
+	.themes {
 		left: auto;
 		right: -88px;
-	
+	}
 
-	.themes strong 
+	.themes strong {
 		display: block;
-	
+	}
 
-	.themes .colon 
+	.themes .colon {
 		display: none;
-	
+	}
 
-	footer p 
+	footer p {
 		position: relative;
 		top: -8px;
-	
+	}
 
-	footer .credits p 
+	footer .credits p {
 		width: 160px;
-	
+	}
 
-	footer .themes p 
+	footer .themes p {
 		width: 110px;
-	
+	}
 
+}
