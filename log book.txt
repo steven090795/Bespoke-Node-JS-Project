@@ -229,15 +229,31 @@ Steven
 6/6
 Alvin
 1. Edit style HBCD presentation
-2. continue edit style HBCD presentation
-3. difficulties in jade
+2. continue edit style HBCD presentation and add Test folder for style experiment
+3. difficulties converting html language to jade language
 
 Robert
-1.
-2.
+1. Edit index.jade
+2. Test Coding Theme
 3.
 
 Steven
-1.
-2.
+1. Belajar javascript
+2. Try to use javascript
+3.
+
+7/7
+Alvin
+1. edit style HBCD presentation and add Test folder for style experiment
+2. experiment presentation style and test clone the style to the other presentation
+3.
+
+Robert
+1. Test Coding Theme
+2. Test using Theme, manage 3 themes
+3.
+
+Steven
+1. Try to use javascript
+2. Test themes
 3.
