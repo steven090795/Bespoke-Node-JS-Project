@@ -1,0 +1,103 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Manajemen Branch
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+    <div class="header">
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="index.html">Branching Pada Git</option></a>
+    <option value="" selected="1">Manajemen Branch</option></a>
+    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
+    <option value="Remote Branches.html">Remote Branches</option></a>
+    <option value="Rebasing.html" >Rebasing</option></a>
+    </select>
+    Pilih Slide:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="" selected="1">Slide 1</option></a>
+    <option value="index.html#2">Slide 2</option></a>
+    <option value="index.html#3">Slide 3</option></a>
+    <option value="index.html#4">Slide 4</option></a>
+    <option value="index.html#5">Slide 5</option></a>
+    <option value="index.html#6">Slide 6</option></a>
+    <option value="index.html#7">Slide 7</option></a>
+    <option value="index.html#8">Slide 8</option></a>
+    <option value="index.html#9">Slide 9</option></a>
+    <option value="index.html#10">Slide 10</option></a>
+    <option value="index.html#11">Slide 11</option></a>
+    <option value="index.html#12">Slide 12</option></a>
+    <option value="index.html#13">Slide 13</option></a>
+    <option value="index.html#14">Slide 14</option></a>
+    <option value="index.html#15">Slide 15</option></a>
+    </select>
+    </div>
+    article
+
+      section
+        h1 Manajemen Branch
+        h2 Orange Team
+      section
+        h3 Perintah git branch melakukan tidak lebih dari sekedar membuat dan menghapus branch. Jika anda menjalankannya tanpa argument, anda mendapatkan daftar sederhana dari branch anda saat ini:
+        pre
+        code.language-bash.
+          $ git branch
+            iss53
+          * master
+            testing
+      section
+        h3(align="left") Perhatikan karakter * yang menjadi prefiks pada branch master: ini menunjukkan bahwa branch yang telah anda check-out saat ini. Ini berarti bahwa jika anda melakukan commit pada titik ini, branch master akan bergerak maju dengan pekerjaan baru anda.
+        pre
+        code.language-bash.
+          $ git branch -v
+            iss53   93b412c fix javascript issue
+          * master  7a98805 Merge branch 'iss53'
+            testing 782fd34 add scott to the author 
+          list in the readmes
+      section
+        h3 Kegunaan lain dari mencari tahu di branch mana anda berada adalah untuk menyaring daftar ini hingga branch yang telah atau belum anda merge (gabungkan) ke branch yang dimana anda berada. Pilihan <strong>--merged</strong> dan <strong>--no-merged</strong> yang berguna telah tersedia di Git sejak versi 1.5.6 untuk tujuan ini. Untuk melihat branch mana yang sudah digabung ke dalam branch yang dimana anda berada, anda dapat menjalankan <strong>git branch --merged</strong>
+      section
+        pre 
+        code.language-bash. 
+          $ git branch --merged
+            iss53
+          * master
+      section
+        h3 Karena anda sudah melakukan merge pada <strong>iss53</strong> sebelumnya, anda melihatnya dalam daftar anda. Branch yang berada dalam daftar ini tanpa * di depannya umumnya aman untuk dihapus dengan <strong>git branch -d</strong>; anda telah memadukan hasil kerja mereka ke branch lain, sehingga anda tidak akan kehilangan apa-apa.
+      section
+        h3 Untuk melihat semua branch yang berisi pekerjaan yang belum anda merge (gabungkan), anda dapat menjalankan <strong>git branch --no-merged</strong>:
+        pre
+        code.language-bash.
+          $ git branch --no-merged
+          testing             
+      section
+        h3 Ini menunjukkan branch anda yang lainnya. Karena ini berisi pekerjaan yang belum digabungkan, jika anda mencoba untuk menghapusnya dengan <strong>git branch -d</strong> maka akan gagal:
+      section
+        pre 
+        code.language-bash.
+          $ git branch -d testing
+          error: The branch 'testing' is 
+          not an ancestor of your current HEAD.
+          If you are sure you want to delete it,
+          run 'git branch -D testing'.
+      section
+        h3 Jika anda benar-benar ingin menghapus branch tersebut dan kehilangan pekerjaan yang ada disitu, anda dapat memaksakannya dengan <strong>-D</strong>, sebagaimana yang ditunjukkan oleh pesan bantuan.
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
