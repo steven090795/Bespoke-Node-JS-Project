@@ -1,3 +1,9 @@
+p, li{
+	font-size: 1.1em;
+}
+section{
+	padding: 30px;
+}
 * {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
@@ -107,7 +113,7 @@ h1 {
 	font-family: Raleway Dots;
 
 	/* Fix thin font rendering on Windows */
-	font-size: 156px;
+	font-size: 72px;
 	-webkit-transform: scale(0.5);
 	-moz-transform: scale(0.5);
 	-ms-transform: scale(0.5);
@@ -138,7 +144,7 @@ h2 {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 50%;
+	top: 70%;
 	z-index: 30;
 	margin-top: 14px;
 	text-align: center;
