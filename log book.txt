@@ -222,6 +222,22 @@ Robert
 3.
 
 Steven
+1. fix git date time bugs
+2. belajar javascript
+3. bugs pada jump slide
+
+6/6
+Alvin
+1. Edit style HBCD presentation
+2. continue edit style HBCD presentation
+3. difficulties in jade
+
+Robert
+1.
+2.
+3.
+
+Steven
 1.
 2.
 3.
