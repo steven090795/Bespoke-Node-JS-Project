@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Branching Pada Git
+    title Offline Bespoke
 
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
@@ -13,92 +13,47 @@ html
 
   body
     <div class="header">
-    <div class="pilih_presentasi">
-    p Pilih Persentasi:  
-    </div>
-    <div class="style-select"><select onchange="location.href=this.options[this.selectedIndex].value">
-
-    <option value="index.html">Home</option></a>
-    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
-    <option value="Manajemen Branch.html" selected="1">Manajemen Branch</option></a>
-    <option value="Remote Branches.html">Remote Branches</option></a>
-    <option value="Rebasing.html">Rebasing</option></a>
+    p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
+    <option value="" selected="1">First</option></a>
+    <option value="index2.html">Second</option></a>
     </select>
     </div>
-
-    </div>
     article
+
       section
-        h1 Branching Pada Git
-        h2 
+        h1 Alur Kerja Branching
+        h2 Orange Team
       section
-        h2
+        h3 Sekarang dimana anda telah memiliki dasar-dasar branching dan merging, apa yang bisa atau harus anda lakukan dengannya? Pada bagian ini, kerjaita akan membahas beberapa alur kerja umum yang menjadi mungkin dengan adanya proses branching yang ringan ini, sehingga anda dapat memutuskan apakah anda ingin memasukkannya ke dalam siklus pengembangan (development) anda.
       section
-        h3 Ketika anda melakukan commit dalam Git, Git menyimpan sebuah object commit yang berisi pointer ke snapshot dari konten yang anda staged, metadata pembuat (author) dan pesan (message), dan nol atau lebih pointer ke commit yang merupakan parent (induk) langsung dari commit ini: nol jika ini commit yang pertama, satu jika ini commit yang normal, dan beberapa jika ini commit yang dihasilkan dari gabungan antara dua atau lebih branch.
+        h2 Branch Berjangka Lama (Long-Running Branches)
+
       section
-        h3 Untuk memvisualisasikan ini, mari kita asumsikan anda memiliki direktori yang berisi tiga buah berkas, dan anda menambahkan mereka ke stage dan melakukan commit. Proses staging berkas melakukan checksum (dengan hash SHA-1), menyimpan versi berkas tersebut dalam repositori Git (Git merujuknya sebagai 'blobs'), dan menambahkan checksum tersebut ke staging area:
+        h3 Karena Git menggunakan three-way merge yang sederhana, menggabungkan dari satu branch ke yang lainnya berkali-kali dalam jangka yang panjang umumnya mudah untuk dilakukan. Ini berarti anda dapat memiliki beberapa branch yang selalu terbuka dan yang anda gunakan untuk tahap yang berbeda dari siklus development anda; anda dapat melakukan merge secara regular atas beberapa dari mereka ke yang lainnya.
       section
-        pre 
-        code.language-bash.
-          $ git add README test.rb LICENSE
-          $ git commit -m 'initial commit of my project'
+        h3 Banyak pengembang Git memiliki alur kerja yang mencakup pendekatan ini, seperti hanya memiliki kode yang sepenuhnya stabil dalam branch <strong>master</strong> mereka - mungkin hanya kode yang telah atau akan dirilis. Mereka memiliki branch paralel lain yang bernama <strong>develop</strong> atau next dimana mereka mengerjakan darinya atau menggunakannya untuk menguji stabilitas - belum tentu selalu stabil, namun setiap kali sampai ke keadaan stabil, branch dapat digabungkan ke <strong>master</strong>. Ini digunakan untuk melakukan pull dari topic branch (branch berumur pendek, seperti branch <strong>iss53</strong> anda sebelumnya) ketika mereka telah siap, untuk memastikan mereka lolos semua pengujian dan tidak memiliki bug (kesalahan).
       section
-        h3 Ketika anda membuat commit dengan menjalankan <strong>git commit</strong>, Git melakukan checksum pada setiap subdirektori dan menyimpan object tree tersebut dalam repositori Git. Git kemudian membuat object commit yang memiliki metadata dan pointer ke root dari project tree sehingga dapat membuat kembali snapshot tersebut bila diperlukan.
+        h3 Pada kenyataannya, kita sedang berbicara mengenai pointer yang bergerak menaiki garis commit yang anda buat. Branch yang stabil berada jauh di bawah garis histori dari commit anda, dan branch yang bersifat bleeding-edge berada di histori terdepan
+
       section
-        h3 Sebuah branch di Git secara sederhana hanyalah pointer yang dapat bergerak ke salah satu commit. Nama default dari branch dalam Git adalah master. Ketika anda membuat commit di awal, anda diberikan sebuah branch master yang menunjuk ke commit terakhir yang anda buat. Setiap kali anda melakukan commit, ia bergerak maju secara otomatis.
+        image(src="image/28.png")
       section
-        img(src="image/21.png")
+        image(src="image/29.png")
       section
-        h2 Apa yang terjadi jika anda membuat branch baru?
+        h2 Branch Berjangka Pendek (Topic Branches)
       section
-        h3.bullet Nah, melakukan hal tersebut menciptakan sebuah pointer baru untuk bergerak. Katakanlah anda membuat branch baru yang bernama <strong>testing</strong>. Anda melakukan ini dengan perintah <strong>git branch</strong>:
-        pre.bullet
-          $ git branch testing
-        h3.bullet Hal ini menciptakan sebuah pointer (penunjuk) baru pada commit yang sama dengan yang saat ini anda berada 
+        h3 Topic branch, bagaimanapun, berguna pada proyek-proyek untuk berbagai ukuran. Sebuah topic branch adalah branch berumur singkat yang anda buat dan gunakan untuk suatu fitur tertentu atau pekerjaan yang terkait.
       section
-        img(src="image/22.png")
+        h3 Kita ambil contoh berupa melakukan beberapa pekerjaan (pada <strong>master</strong>), branching untuk sebuah masalah (<strong>iss91</strong>), bekerja di atasnya untuk sesaat, melakukan branching kedua kalinya untuk mencoba cara lain dalam menangani hal yang sama (<strong>iss91v2</strong>), kembali ke branch master dan bekerja di sana untuk sementara, dan kemudian melakukan branching disana untuk melakukan beberapa pekerjaan yang anda belum yakin apakah ide itu baik (branch <strong>dumbidea</strong>).
       section
-        h2 Bagaimana Git tahu di branch mana anda berada saat ini?
+        image(src="image/30.png")
       section
-        h3 Git menyimpan sebuah pointer khusus yang disebut HEAD. Perhatikan bahwa ini adalah jauh berbeda dari konsep HEAD di VCS lain yang mungkin pernah anda gunakan, seperti Subversion atau CVS. Dalam Git, HEAD ini adalah pointer ke branch lokal anda saat ini. Dalam kasus ini, anda masih berada di master. Perintah git branch hanya menciptakan sebuah branch baru — namun tidak dengan serta-merta beralih ke branch itu
+        h3 Sekarang, katakanlah anda memutuskan anda suka solusi kedua atas masalah anda dibanding yang lain (<strong>iss91v2</strong>); dan anda menunjukkan branch <strong>dumbidea</strong> ke rekan kerja anda, dan tampak menjadi sesuatu yang jenius. Anda dapat membuang branch <strong>iss91</strong> yang asli (kehilangan commit C5 dan C6) dan menggabungkan dua lainnya.
       section
-        img(src="image/23.png")
+        image(src="image/31.png")
       section
-        h2 Bagaimana cara untuk memindahkan HEAD pada branch testing?
-      section
-        h3.bullet Untuk beralih ke branch yang telah ada, anda dapat menjalankan perintah <strong>git checkout</strong>. Mari kita beralih ke branch testing yang baru saja dibuat:
-        pre.bullet
-          $ git checkout testing
-        h3.bullet maka HEAD menunjuk ke branch testing
-      section
-        img(src="image/24.png")
-      section
-        h2 Apa pentingnya itu?
-        h3 Baiklah, mari kita lakukan commit lain:
-        pre
-        code.language-bash.
-          $ vim test.rb
-          $ git commit -a -m 'made a change'
-      section
-          img(src="image/25.png")
-      section
-        h3.bullet Hal ini menarik, karena sekarang branch testing anda telah bergerak maju, tetapi cabang master anda masih menunjuk ke commit dimana disitu anda menjalankan <strong>git checkout</strong> untuk beralih branch. Mari kita beralih kembali ke branch master:
-        pre.bullet
-          $ git checkout master
-      section
-        img(src="image/26.png")
-      section
-        h3 Perintah tersebut melakukan dua hal. Ia memindahkan pointer HEAD kembali menunjuk ke branch master, dan ia mengembalikan berkas-berkas dalam direktori kerja anda kembali ke snapshot yang ditunjuk oleh master. Ini juga berarti perubahan yang anda lakukan dari titik ini ke depan akan berubah arah dari versi lama dari proyek. Hal ini pada dasarnya melakukan pemutaran balik pekerjaan yang anda lakukan dalam branch testing anda untuk sementara sehingga anda dapat pergi ke arah yang berbeda.
-      section
-        h3.bullet Mari buat sedikit perubahan dan lakukan commit lagi:
-        pre.bullet
-        code.language-bash.
-          $ vim test.rb
-          $ git commit -a -m 'made other changes'
-      section
-        img(src="image/27.png")
-      section
-        h3 Sekarang histori proyek anda telah berubah arah. Anda membuat dan beralih ke suatu branch, melakukan beberapa pekerjaan di atasnya, dan kemudian beralih kembali ke branch utama anda dan melakukan pekerjaan lain. Kedua perubahan itu terisolasi dalam branch terpisah: anda dapat beralih antara branch dan menggabungkan (merge) mereka bersama-sama ketika anda siap. Dan anda melakukan semua itu dengan perintah branch dan checkout yang sederhana
+        h3 Sangat penting untuk diingat ketika anda melakukan semua ini bahwa kesemua branch tersebut berada di lokal. Ketika anda melakukan branching dan merging, semuanya dilakukan hanya dalam repositori Git anda - tidak ada komunikasi yang terjadi dengan server.
+
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
