@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Alur Kerja Branching
+    title Branching Pada Git
 
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
@@ -14,28 +14,28 @@ html
   body(class="cube" id="#main")
     <div class="header">
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
-    <option value="Branching Pada Git.html">Branching Pada Git</option></a>
-    <option value="" selected="1">Alur Kerja Branching</option></a>
+    <option value="" selected="1">Branching Pada Git</option></a>
+    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
     <option value="Manajemen Branch.html">Manajemen Branch</option></a>
     <option value="Remote Branches.html">Remote Branches</option></a>
     <option value="Rebasing.html">Rebasing</option></a>
     </select> 
     Pilih Slide:  <select onchange="location.href=this.options[this.selectedIndex].value">
     <option value="" selected="1">Slide 1</option></a>
-    <option value="Alur Kerja Branching.html#2">Slide 2</option></a>
-    <option value="Alur Kerja Branching.html#3">Slide 3</option></a>
-    <option value="Alur Kerja Branching.html#4">Slide 4</option></a>
-    <option value="Alur Kerja Branching.html#5">Slide 5</option></a>
-    <option value="Alur Kerja Branching.html#6">Slide 6</option></a>
-    <option value="Alur Kerja Branching.html#7">Slide 7</option></a>
-    <option value="Alur Kerja Branching.html#8">Slide 8</option></a>
-    <option value="Alur Kerja Branching.html#9">Slide 9</option></a>
-    <option value="Alur Kerja Branching.html#10">Slide 10</option></a>
-    <option value="Alur Kerja Branching.html#11">Slide 11</option></a>
-    <option value="Alur Kerja Branching.html#12">Slide 12</option></a>
-    <option value="Alur Kerja Branching.html#13">Slide 13</option></a>
-    <option value="Alur Kerja Branching.html#14">Slide 14</option></a>
-    <option value="Alur Kerja Branching.html#15">Slide 15</option></a>
+    <option value="Branching Pada Git.html#2">Slide 2</option></a>
+    <option value="Branching Pada Git.html#3">Slide 3</option></a>
+    <option value="Branching Pada Git.html#4">Slide 4</option></a>
+    <option value="Branching Pada Git.html#5">Slide 5</option></a>
+    <option value="Branching Pada Git.html#6">Slide 6</option></a>
+    <option value="Branching Pada Git.html#7">Slide 7</option></a>
+    <option value="Branching Pada Git.html#8">Slide 8</option></a>
+    <option value="Branching Pada Git.html#9">Slide 9</option></a>
+    <option value="Branching Pada Git.html#10">Slide 10</option></a>
+    <option value="Branching Pada Git.html#11">Slide 11</option></a>
+    <option value="Branching Pada Git.html#12">Slide 12</option></a>
+    <option value="Branching Pada Git.html#13">Slide 13</option></a>
+    <option value="Branching Pada Git.html#14">Slide 14</option></a>
+    <option value="Branching Pada Git.html#15">Slide 15</option></a>
     </select>
     </div>
     article
@@ -47,12 +47,14 @@ html
         h3 Sekarang dimana anda telah memiliki dasar-dasar branching dan merging, apa yang bisa atau harus anda lakukan dengannya? Pada bagian ini, kerjaita akan membahas beberapa alur kerja umum yang menjadi mungkin dengan adanya proses branching yang ringan ini, sehingga anda dapat memutuskan apakah anda ingin memasukkannya ke dalam siklus pengembangan (development) anda.
       section
         h2 Branch Berjangka Lama (Long-Running Branches)
+
       section
         h3 Karena Git menggunakan three-way merge yang sederhana, menggabungkan dari satu branch ke yang lainnya berkali-kali dalam jangka yang panjang umumnya mudah untuk dilakukan. Ini berarti anda dapat memiliki beberapa branch yang selalu terbuka dan yang anda gunakan untuk tahap yang berbeda dari siklus development anda; anda dapat melakukan merge secara regular atas beberapa dari mereka ke yang lainnya.
       section
         h3 Banyak pengembang Git memiliki alur kerja yang mencakup pendekatan ini, seperti hanya memiliki kode yang sepenuhnya stabil dalam branch <strong>master</strong> mereka - mungkin hanya kode yang telah atau akan dirilis. Mereka memiliki branch paralel lain yang bernama <strong>develop</strong> atau next dimana mereka mengerjakan darinya atau menggunakannya untuk menguji stabilitas - belum tentu selalu stabil, namun setiap kali sampai ke keadaan stabil, branch dapat digabungkan ke <strong>master</strong>. Ini digunakan untuk melakukan pull dari topic branch (branch berumur pendek, seperti branch <strong>iss53</strong> anda sebelumnya) ketika mereka telah siap, untuk memastikan mereka lolos semua pengujian dan tidak memiliki bug (kesalahan).
       section
         h3 Pada kenyataannya, kita sedang berbicara mengenai pointer yang bergerak menaiki garis commit yang anda buat. Branch yang stabil berada jauh di bawah garis histori dari commit anda, dan branch yang bersifat bleeding-edge berada di histori terdepan
+
       section
         image(src="image/28.png")
       section
@@ -71,7 +73,6 @@ html
         image(src="image/31.png")
       section
         h3 Sangat penting untuk diingat ketika anda melakukan semua ini bahwa kesemua branch tersebut berada di lokal. Ketika anda melakukan branching dan merging, semuanya dilakukan hanya dalam repositori Git anda - tidak ada komunikasi yang terjadi dengan server.
-
 
 
     // build:js scripts/scripts.js
