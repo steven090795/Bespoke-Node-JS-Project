@@ -11,35 +11,44 @@ html
     link(rel='stylesheet', type='text/css', href='styles/main.css')
     // endbuild
 
-  body
+  body(class="cube" id="#main")
     <div class="header">
     p Pilih Persentasi:  <select onchange="location.href=this.options[this.selectedIndex].value">
-    <option value="index.html">Branching Pada Git</option></a>
+    <option value="Branching Pada Git.html">Branching Pada Git</option></a>
+    <option value="Alur Kerja Branching.html">Alur Kerja Branching</option></a>
     <option value="Manajemen Branch.html">Manajemen Branch</option></a>
-    <option value="Alur Kerja Branching" >Alur Kerja Branching</option></a>
-    <option value=""  selected="1">Remote Branches</option></a>
+    <option value="" selected="1">Remote Branches</option></a>
     <option value="Rebasing.html">Rebasing</option></a>
-    </select>
+    </select> 
     Pilih Slide:  <select onchange="location.href=this.options[this.selectedIndex].value">
     <option value="" selected="1">Slide 1</option></a>
-    <option value="index.html#2">Slide 2</option></a>
-    <option value="index.html#3">Slide 3</option></a>
-    <option value="index.html#4">Slide 4</option></a>
-    <option value="index.html#5">Slide 5</option></a>
-    <option value="index.html#6">Slide 6</option></a>
-    <option value="index.html#7">Slide 7</option></a>
-    <option value="index.html#8">Slide 8</option></a>
-    <option value="index.html#9">Slide 9</option></a>
-    <option value="index.html#10">Slide 10</option></a>
-    <option value="index.html#11">Slide 11</option></a>
-    <option value="index.html#12">Slide 12</option></a>
-    <option value="index.html#13">Slide 13</option></a>
-    <option value="index.html#14">Slide 14</option></a>
-    <option value="index.html#15">Slide 15</option></a>
+    <option value="Remote Branches.html#2">Slide 2</option></a>
+    <option value="Remote Branches.html#3">Slide 3</option></a>
+    <option value="Remote Branches.html#4">Slide 4</option></a>
+    <option value="Remote Branches.html#5">Slide 5</option></a>
+    <option value="Remote Branches.html#6">Slide 6</option></a>
+    <option value="Remote Branches.html#7">Slide 7</option></a>
+    <option value="Remote Branches.html#8">Slide 8</option></a>
+    <option value="Remote Branches.html#9">Slide 9</option></a>
+    <option value="Remote Branches.html#10">Slide 10</option></a>
+    <option value="Remote Branches.html#11">Slide 11</option></a>
+    <option value="Remote Branches.html#12">Slide 12</option></a>
+    <option value="Remote Branches.html#13">Slide 13</option></a>
+    <option value="Remote Branches.html#14">Slide 14</option></a>
+    <option value="Remote Branches.html#15">Slide 15</option></a>
+    <option value="Remote Branches.html#16">Slide 16</option></a>
+    <option value="Remote Branches.html#17">Slide 17</option></a>
+    <option value="Remote Branches.html#18">Slide 18</option></a>
+    <option value="Remote Branches.html#19">Slide 19</option></a>
+    <option value="Remote Branches.html#20">Slide 20</option></a>
+    <option value="Remote Branches.html#21">Slide 21</option></a>
+    <option value="Remote Branches.html#22">Slide 22</option></a>
+    <option value="Remote Branches.html#23">Slide 23</option></a>
+    <option value="Remote Branches.html#24">Slide 24</option></a>
+    <option value="Remote Branches.html#25">Slide 25</option></a>
     </select>
     </div>
     article
-
       section
         h1 Remote Branches
         h2 Orange Team
@@ -141,6 +150,9 @@ html
           - [deleted]         serverfix
       section
         p Boom. No more branch on your server. You may want to dog-ear this page, because you’ll need that command, and you’ll likely forget the syntax. A way to remember this command is by recalling the <strong>git push [remotename] [localbranch]:[remotebranch]</strong> syntax that we went over a bit earlier. If you leave off the <strong>[localbranch]</strong> portion, then you’re basically saying, “Take nothing on my side and make it be <strong>[remotebranch]</strong>.”
+
+
+
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
@@ -153,4 +165,5 @@ html
     script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
     script(src='bower_components/prism/prism.js')
     script(src='scripts/main.js')
+    script(src='scripts/dcomputare.js')
     // endbuild
