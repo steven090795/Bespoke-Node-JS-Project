@@ -11,7 +11,11 @@ html
 
 	body.coverflow
 		div#main
-			
+			header
+				p Pilih Persentasi:
+					select(onchange='location.href=this.options[this.selectedIndex].value')
+						option(value='', selected='1') First
+						option(value='index2.html') Second
 			article
 				section
 					h1 How to Create Ms-Dos BootCD (Hiren's Bootable CD)?
