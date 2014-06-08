@@ -18,7 +18,8 @@
 			'cube',
 			'card',
 			'coverflow',
-			'concave'
+			'concave',
+			'carousel'
 		];
 		
 		selectedThemeIndex = 0;
